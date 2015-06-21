@@ -1,0 +1,6 @@
+$('.update_post').bind('ajax:success', function() {
+    var position = $(this).closest('tr').index();
+    $('#table_row_position').val(position);
+});
+
+$('#container').html("<%= escape_javascript render(file: 'stock_items/edit.html.erb') %>");

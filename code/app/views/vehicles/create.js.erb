@@ -1,0 +1,10 @@
+rowContent = '<tr>' +
+        '<td><%= image_tag @vehicle_details.image  %></td>' +
+        '<td><%= @vehicle_details.name %></td>' +
+        '<td><%= @vehicle.description %></td>' +
+        '<td><%= link_to 'Edit', edit_vehicle_path(@vehicle.id.to_s) %></td>' +
+        '<td><%= link_to 'Destroy', vehicle_path(@vehicle.id.to_s), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: :delete_post %></td>' +
+        '</tr>'
+
+insertRowAfter('vehicle_tbody', rowContent);
+

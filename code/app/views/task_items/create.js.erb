@@ -1,0 +1,14 @@
+var rowContent = '<tr>' +
+        '<td><%= @stock_item.code  %></td>' +
+        '<td><%= @task_item.qtd  %></td>' +
+        '<td><%= @stock_item.name  %></td>' +
+        '<td><%= current_user_name  %></td>' +
+        '<td><%= @task_item.note  %></td>' +
+
+        '<td><%= link_to 'Edit', edit_task_item_path(@task_item), remote: true, class: :update_post %></td>' +
+        '<td><%= link_to 'Destroy', task_item_path(@task_item), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: :delete_post %></td>' +
+        '</tr>';
+
+insertRowAfter('task_item_tbody', rowContent);
+
+$('#container').html("");

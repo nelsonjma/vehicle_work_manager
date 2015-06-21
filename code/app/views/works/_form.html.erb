@@ -1,0 +1,36 @@
+<%= form_for(@work, remote: remote) do |f| %>
+    <% if @work.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@work.errors.count, 'error') %>:</h2>
+
+          <ul>
+            <% @work.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <% if vehicle_id != nil %>
+        <%= f.hidden_field :vehicle_id, value: vehicle_id %>
+    <% else %>
+        <%= f.hidden_field :vehicle_id %>
+    <% end %>
+
+    <div class="field">
+      <%= f.label 'descrição:' %> <br>
+      <%= f.text_field :description %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'notas:' %> <br>
+      <%= f.text_area :notes %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'obra terminado ?' %> <br/>
+      <%= f.check_box :finished %>
+    </div>
+
+    <%= f.submit %>
+<% end %>

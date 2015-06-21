@@ -1,0 +1,10 @@
+$('#container').html("");
+
+var row_position = $('#table_row_position').val();
+
+var selected_row = $('#stock_items_tbody').find('> tr:eq(' + row_position + ')');
+
+selected_row.find('> td:eq(0)').html("<%= @stock_item.code %>");
+selected_row.find('> td:eq(1)').html("<%= @stock_item.name %>");
+selected_row.find('> td:eq(2)').html("<%= @stock_item.description %>");
+selected_row.find('> td:eq(3)').html("<%= @stock_item.qtd %>");

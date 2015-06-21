@@ -1,0 +1,12 @@
+var rowContent = '<tr>' +
+        '<td><%= @stock_item.code  %></td>' +
+        '<td><%= @stock_item.name  %></td>' +
+        '<td><%= @stock_item.description  %></td>' +
+        '<td><%= @stock_item.qtd  %></td>' +
+        '<td><%= link_to 'Edit', edit_stock_item_path(@stock_item), remote: true, class: :update_post %></td>' +
+        '<td><%= link_to 'Destroy', @stock_item, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: :delete_post %></td>' +
+        '</tr>';
+
+insertRowAfter('stock_items_tbody', rowContent);
+
+$('#container').html("");

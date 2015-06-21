@@ -1,0 +1,12 @@
+var rowContent = '<tr>' +
+        '<td><%= @task_details.name %></td>' +
+        '<td><%= @task_details.description %></td>' +
+        '<td><%= @work_task.ut %></td>' +
+        '<td><%= link_to 'Show Items', task_items_path(params: { work_task_id: @work_task.id }) %></td>' +
+        '<td><%= link_to 'Edit', edit_work_task_path(@work_task.id), remote: true, class: :update_post %></td>' +
+        '<td><%= link_to 'Destroy', work_task_path(@work_task.id), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: :delete_post %></td>' +
+        '</tr>';
+
+insertRowAfter('work_task_tbody', rowContent);
+
+$('#container').html("");

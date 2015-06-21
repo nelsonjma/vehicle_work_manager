@@ -1,0 +1,38 @@
+<%= form_for(@task_item, remote: true) do |f| %>
+    <% if @task_item.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@task_item.errors.count, 'error') %>:</h2>
+
+          <ul>
+            <% @task_item.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <% if work_task_id != nil %>
+        <%= f.hidden_field :work_task_id, value: work_task_id %>
+    <% else %>
+        <%= f.hidden_field :work_task_id %>
+    <% end %>
+
+    <%= f.hidden_field :user_id, value: current_user_id %>
+
+    <div class="field">
+      <%= f.label 'Items do stock:' %><br>
+      <%= f.select(:stock_item_id, stock_item_list, :prompt => 'Selecionar') %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Observações:' %> <br>
+      <%= f.text_field :note %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'quantidade:' %> <br/>
+      <%= f.text_field :qtd %>
+    </div>
+
+    <%= f.submit %>
+<% end %>

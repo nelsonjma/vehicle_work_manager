@@ -1,0 +1,46 @@
+<%= form_tag({ :action => :create }, { :method => :post }) do %>
+
+    <%= hidden_field_tag :pin, '' %>
+
+    <div class="pin_container">
+      <table>
+        <tr class="display">
+          <td colspan="3">
+            <div class="display" id="display">#:</div>
+
+          </td>
+        </tr>
+        <tr>
+          <td class="divider" colspan="3"></td>
+        </tr>
+        <tr>
+          <td><div class="click top_left">7</div></td>
+          <td><div class="click">8</div></td>
+          <td><div class="click top_right">9</div></td>
+        </tr>
+        <tr>
+          <td><div class="click">4</div></td>
+          <td><div class="click">5</div></td>
+          <td><div class="click">6</div></td>
+        </tr>
+        <tr>
+          <td><div class="click">1</div></td>
+          <td><div class="click">2</div></td>
+          <td><div class="click">3</div></td>
+        </tr>
+        <tr>
+          <td><div class="click bottom_left">CLR</div></td>
+          <td><div class="click">0</div></td>
+          <td><div class="bottom_right"><%= submit_tag 'OK' %></div></td>
+
+        </tr>
+      </table>
+    </div>
+
+<% end %>
+
+<% content_for :head do %>
+    <script type="text/javascript">
+        <%= render :partial => 'pin_input_ctrl.js' %>
+    </script>
+<% end %>

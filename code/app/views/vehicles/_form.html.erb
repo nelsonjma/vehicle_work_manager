@@ -1,0 +1,24 @@
+<%= form_for(@vehicle, remote: remote) do |f| %>
+    <% if @vehicle.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@vehicle.errors.count, 'error') %>:</h2>
+
+          <ul>
+            <% @vehicle.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="field">
+      <%= f.label 'tipo de veiculo:' %><br>
+      <%= f.select(:vehicle_type_id, vehicle_type_list, :prompt => 'Selecionar') %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'descrição:' %><br>
+      <%= f.text_field :description %>
+    </div>
+
+    <%= f.submit %>
+<% end %>

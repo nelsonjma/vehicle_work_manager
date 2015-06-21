@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : 'VehicleWorkManager' %></title>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <%= csrf_meta_tags %>
+
+  <%= yield :head %>
+</head>
+<body class="controller-<%= params[:controller] %>">
+
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container-fluid">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav">
+            <li data-no-turbolink><%= link_to 'Stock', '/stock_items' %></li>
+            <li data-no-turbolink><%= link_to 'Tarefas', '/tasks' %></li>
+            <li data-no-turbolink><%= link_to 'Veiculos', '/vehicles' %></li>
+            <li data-no-turbolink><%= link_to 'Tipos de Veiculos', '/vehicle_types' %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <%= bootstrap_flash %>
+
+    <%= yield %>
+
+</body>
+</html>
+

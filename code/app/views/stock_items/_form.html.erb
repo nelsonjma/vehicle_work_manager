@@ -1,0 +1,37 @@
+<%= form_for(@stock_item, remote: true) do |f| %>
+  <% if @stock_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@stock_item.errors.count, 'error') %> :</h2>
+
+      <ul>
+      <% @stock_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'codigo:' %>
+    <%= f.text_field :code %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'nome:' %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'descrição:' %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'quantidade:' %>
+    <%= f.text_field :qtd %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
