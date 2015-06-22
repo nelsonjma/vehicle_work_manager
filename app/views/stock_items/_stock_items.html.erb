@@ -1,0 +1,29 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+<%= hidden_field_tag :table_row_position %>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th><%= sortable(:sort, :direction, 'created_at','code','Codigo') %></th>
+    <th><%= sortable(:sort, :direction, 'created_at','name','Nome') %></th>
+    <th><%= sortable(:sort, :direction, 'created_at','description','Descrição') %></th>
+    <th><%= sortable(:sort, :direction, 'created_at','qtd','Quantidade') %></th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody id="stock_items_tbody">
+  <% @stock_items.each do |stock_item| %>
+      <tr>
+        <td><%= stock_item.code %></td>
+        <td><%= stock_item.name %></td>
+        <td><%= stock_item.description %></td>
+        <td><%= stock_item.qtd %></td>
+
+        <td><%= link_to 'Edit', edit_stock_item_path(stock_item), remote: true, class: :update_post %></td>
+        <td><%= link_to 'Destroy', stock_item, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: :delete_post %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -1,13 +1,15 @@
 class StockItemsController < ApplicationController
 
+  helper 'table_operations/sorting'
+
+  include TableOperations::SortingHelper
+
   before_action :authenticated
 
   before_action :set_stock_item, only: [:edit, :update, :destroy]
 
   def index
-    @stock_items = StockItem.all
-
-    @stock_item = StockItem.new
+    @stock_items = StockItem.all.order(sort_column_direction)
   end
 
   def new
@@ -55,5 +57,12 @@ class StockItemsController < ApplicationController
 
     def stock_item_params
       params.require(:stock_item).permit(:code,:name, :description, :qtd)
+    end
+
+    def sort_column_direction
+      sort      = sort_column(:sort, :created_at)
+      direction = sort_direction(:direction)
+
+      return "#{sort} #{direction}"
     end
 end

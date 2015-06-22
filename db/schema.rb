@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20150619225710) do
     t.integer  "stock_item_id"
     t.text     "note"
     t.integer  "qtd"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "tasks", force: :cascade do |t|
