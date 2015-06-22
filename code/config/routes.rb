@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
   root :to => 'vehicles#index'
 
-  resources :session,         :only => [:new, :create]
+  resources :session,         :only => [:create]
+  get '/login'  => 'session#new',      :as => 'login'
+  get '/logout' => 'session#destroy',  :as => 'logout'
+
 
   resources :vehicles,        :only => [:index, :edit, :create, :update, :destroy]
 
@@ -16,8 +19,7 @@ Rails.application.routes.draw do
 
   resources :work_tasks,      :only => [:index, :new, :edit, :create, :update, :destroy]
 
-  resources :task_items
-
+  resources :task_items,      :only => [:index, :new, :edit, :create, :update, :destroy]
 
 
 end

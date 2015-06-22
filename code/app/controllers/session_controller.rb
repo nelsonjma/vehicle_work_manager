@@ -25,7 +25,7 @@ class SessionController < ApplicationController
 
   def destroy
     reset_session
-    redirect_to new_session_path, notice: 'Logout com sucesso'
+    redirect_to login_path, notice: 'Logout com sucesso'
   end
 
 end

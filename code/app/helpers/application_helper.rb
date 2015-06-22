@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def access_denied
-    redirect_to new_session_path
+    redirect_to login_path
 
   end
 

@@ -1,6 +1,8 @@
 function ready() {
 
-    $('.click').click(function (){
+    var click = $('.click');
+
+    click.click(function (){
 
         var value = $(this).html();
 
@@ -11,6 +13,16 @@ function ready() {
         }
 
     });
+
+    click.attr('unselectable','on').css({
+        //'-moz-user-select':'-moz-none',
+        '-moz-user-select':'none',
+        '-o-user-select':'none',
+        '-khtml-user-select':'none', /* you could also put this in a class */
+        '-webkit-user-select':'none',/* and add the CSS class here instead */
+        '-ms-user-select':'none',
+        'user-select':'none'
+    }).bind('selectstart', function(){ return false; });
 }
 
 function insert_number(number) {
@@ -27,3 +39,5 @@ function clear_display() {
 }
 
 $(document).on("ready page:load", ready);
+
+
