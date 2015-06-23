@@ -9,7 +9,8 @@ class StockItemsController < ApplicationController
   before_action :set_stock_item, only: [:edit, :update, :destroy]
 
   def index
-    @stock_items = StockItem.all.order(sort_column_direction)
+    #@stock_items = StockItem.all.order(sort_column_direction).paginate(:per_page => 2, :page => params[:page])
+    @stock_items = StockItem.search(params[:search]).order(sort_column_direction).paginate(:per_page => 2, :page => params[:page])
   end
 
   def new
