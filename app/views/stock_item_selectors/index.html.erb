@@ -1,0 +1,22 @@
+<%= form_tag stock_item_selectors_path, :method => 'get', :id => 'stock_item_selectors_search' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag 'Search', :name => nil %>
+    </p>
+
+    <div id="stock_item_selectors"><%= render 'stock_item_selectors' %></div>
+
+<% end %>
+
+<% content_for :head do %>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#stock_item_selectors_search").find("input").keyup(function() {
+                var stock_item_selectors_search = $("#stock_item_selectors_search");
+
+                $.get(stock_item_selectors_search.attr("action"), stock_item_selectors_search.serialize(), null, "script");
+                return false;
+            });
+        });
+    </script>
+<% end %>

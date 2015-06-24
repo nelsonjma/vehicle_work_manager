@@ -4,3 +4,5 @@ $('.update_post').bind('ajax:success', function() {
 });
 
 $('#container').html("<%= escape_javascript render(file: 'task_items/edit.html.erb') %>");
+
+$('#search').val("");

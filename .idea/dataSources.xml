@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3414806833">
-    <data-source source="LOCAL" name="Rails vehicle_work_manager: development" uuid="5e8e8cd1-7968-4fe1-b720-1cf7996d56dd">
+  <component name="DataSourceManagerImpl" format="xml" hash="512421114">
+    <data-source source="LOCAL" name="Rails vehicle_work_manager: development" uuid="6b16af1c-0324-4f54-aff5-e4d958d0f144">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
-      <libraries>
-        <library>
-          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/sqlite-jdbc-3.8.9.jar</url>
-        </library>
-        <library>
-          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/xerial-sqlite-license.txt</url>
-        </library>
-      </libraries>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails vehicle_work_manager: test" uuid="af8f5710-764d-47a8-bf61-8309163f0dec">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
+      <libraries />
     </data-source>
   </component>
 </project>

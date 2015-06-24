@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="Rails vehicle_work_manager: development" uuid="5e8e8cd1-7968-4fe1-b720-1cf7996d56dd">
-      <first-sync>true</first-sync>
-    </data-source>
+    <data-source name="Rails vehicle_work_manager: development" uuid="6b16af1c-0324-4f54-aff5-e4d958d0f144" />
+    <data-source name="Rails vehicle_work_manager: test" uuid="af8f5710-764d-47a8-bf61-8309163f0dec" />
   </component>
 </project>

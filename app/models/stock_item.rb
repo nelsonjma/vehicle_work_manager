@@ -2,6 +2,8 @@ class StockItem < ActiveRecord::Base
 
   has_many :task_items
 
+  scope :search_by_id, -> (id) { where('id = ?', id) }
+
   def self.remove_stock(id, qtd)
     stock_item = StockItem.find(id)
     stock_item.qtd = stock_item.qtd - qtd

@@ -8,7 +8,7 @@ $(document).ready(function() {
     });
 
     $("#stock_items_search").find("input").keyup(function() {
-        var stock_items_search = $("#stock_items_search")
+        var stock_items_search = $("#stock_items_search");
 
         $.get(stock_items_search.attr("action"), stock_items_search.serialize(), null, "script");
         return false;

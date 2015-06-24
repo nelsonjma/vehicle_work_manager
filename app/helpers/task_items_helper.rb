@@ -16,8 +16,12 @@ module TaskItemsHelper
     StockItem.remove_stock(stock_item_id, (current_qtd - old_qtd))
   end
 
-  def current_stock_item(id)
-    StockItem.find(id)
+  def build_stock_item_name(name)
+    if name
+      return capture { concat text_field_tag :stock_item_name, name }
+    else
+      return capture { concat text_field_tag :stock_item_name }
+    end
   end
 
 end

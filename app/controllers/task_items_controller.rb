@@ -15,10 +15,13 @@ class TaskItemsController < ApplicationController
   end
 
   def new
-    @task_item = TaskItem.new
+    @stock_items  = StockItem.search(params[:search])
+    @task_item    = TaskItem.new
   end
 
   def edit
+    @stock_items      = StockItem.search_by_id(params[:search])
+    @stock_item_name  = @stock_items.first.name
   end
 
   def create
@@ -28,7 +31,7 @@ class TaskItemsController < ApplicationController
       if @task_item.save
         remove_from_stock(@task_item.stock_item_id, @task_item.qtd)
 
-        @stock_item = current_stock_item(@task_item.stock_item_id)
+        @stock_item = StockItem.find(@task_item.stock_item_id)
 
         format.js   {}
       else
@@ -44,7 +47,7 @@ class TaskItemsController < ApplicationController
       if @task_item.update(task_item_params)
         remove_from_stock(@task_item.stock_item_id, @task_item.qtd, old_qtd)
 
-        @stock_item = current_stock_item(@task_item.stock_item_id)
+        @stock_item = StockItem.find(@task_item.stock_item_id)
 
         format.js   {}
       else

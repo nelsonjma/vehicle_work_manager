@@ -1,0 +1,21 @@
+<table class="table">
+  <thead id="stock_item_selectors_thead">
+  <tr>
+    <th></th>
+    <th>Codigo</th>
+    <th>Nome</th>
+    <th>Stock</th>
+  </tr>
+  </thead>
+
+  <tbody id="stock_item_selectors_tbody">
+  <% @stock_items.each do |stock_item| %>
+      <tr>
+        <td><button class="stock_item_selector_button" id="<%= stock_item.id %>">Selecionar</button></td>
+        <td><%= stock_item.code %></td>
+        <td><%= stock_item.name %></td>
+        <td><%= stock_item.qtd %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
