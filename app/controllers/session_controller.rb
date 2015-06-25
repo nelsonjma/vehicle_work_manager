@@ -18,7 +18,7 @@ class SessionController < ApplicationController
 
       redirect_to vehicles_path
     rescue Exception => ex
-      redirect_to new_session_path, alert: ex.message
+      redirect_to login_path, alert: ex.message
     end
 
   end

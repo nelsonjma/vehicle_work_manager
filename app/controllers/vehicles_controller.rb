@@ -2,7 +2,6 @@ class VehiclesController < ApplicationController
 
   before_action :authenticated
 
-  before_action :authenticated
   before_action :set_vehicle, only: [:edit, :update, :destroy]
 
   def index
@@ -12,11 +11,13 @@ class VehiclesController < ApplicationController
                         .joins(:vehicle_type)
                         .select('vehicles.id, vehicles.description, vehicle_types.name, vehicle_types.image')
 =end
-    @vehicles       = Vehicle
+    @vehicles = Vehicle
                       .joins(:vehicle_type)
                       .select('vehicles.id, vehicles.description, vehicle_types.name, vehicle_types.image')
+  end
 
-    @vehicle        = Vehicle.new
+  def new
+    @vehicle = Vehicle.new
   end
 
   def edit
@@ -39,9 +40,10 @@ class VehiclesController < ApplicationController
   def update
     respond_to do |format|
       if @vehicle.update(vehicle_params)
-        format.html { redirect_to vehicles_url, notice: 'Veiculo actualizado com sucesso.' }
+        @vehicle_details  = VehicleType.find(@vehicle.vehicle_type_id)
+
+        format.js   {}
       else
-        format.html { render :edit }
         format.json { render json: @vehicle.errors, status: :unprocessable_entity }
       end
     end

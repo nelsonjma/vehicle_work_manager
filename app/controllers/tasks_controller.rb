@@ -2,13 +2,10 @@ class TasksController < ApplicationController
 
   before_action :authenticated
 
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:edit, :update, :destroy]
 
   def index
     @tasks = Task.all
-  end
-
-  def show
   end
 
   def new
@@ -23,9 +20,9 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to tasks_path, notice: 'Tarefa criada com sucesso.' }
+
+        format.js   {}
       else
-        format.html { render :new }
         format.json { render json: @task.errors, status: :unprocessable_entity }
       end
     end
@@ -34,7 +31,8 @@ class TasksController < ApplicationController
   def update
     respond_to do |format|
       if @task.update(task_params)
-        format.html { redirect_to tasks_path, notice: 'Tarefa actualizada com sucesso.' }
+
+        format.js {}
       else
         format.html { render :edit }
         format.json { render json: @task.errors, status: :unprocessable_entity }

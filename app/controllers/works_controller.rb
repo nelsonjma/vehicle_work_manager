@@ -2,12 +2,14 @@ class WorksController < ApplicationController
 
   before_action :authenticated
 
-  before_action :set_vehicle_work, only: [:index]
+  before_action :set_vehicle_work, only: [:index, :new]
   before_action :set_work, only: [:edit, :update, :destroy]
 
   def index
     @works = @vehicle.works.all
+  end
 
+  def new
     @work = @vehicle.works.new
   end
 
@@ -29,7 +31,7 @@ class WorksController < ApplicationController
   def update
     respond_to do |format|
       if @work.update(work_params)
-        format.html { redirect_to works_url(params: { vehicle_id: @work.vehicle_id }), notice: 'Obra actualizada com sucesso.' }
+        format.js   {}
       else
         format.html { render :edit }
         format.json { render json: @work.errors, status: :unprocessable_entity }

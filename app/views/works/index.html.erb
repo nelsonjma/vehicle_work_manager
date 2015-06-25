@@ -2,12 +2,12 @@
 
 <table class="table">
   <thead>
-  <tr>
-    <th>descrição</th>
-    <th>notas</th>
-    <th>trabalho terminado?</th>
-    <th colspan="2"></th>
-  </tr>
+      <tr>
+        <th>descrição</th>
+        <th>notas</th>
+        <th>trabalho terminado?</th>
+        <th colspan="2"></th>
+      </tr>
   </thead>
 
   <tbody id="work_tbody">
@@ -18,11 +18,17 @@
         <td><%= work.finished %></td>
 
         <td><%= link_to 'Show Tasks', work_tasks_path(params: { work_id: work.id }) %></td>
-        <td><%= link_to 'Edit', edit_work_path(work) %></td>
+        <td><%= link_to 'Edit', edit_work_path(work), remote: true, class: :update_post %></td>
         <td><%= link_to 'Destroy', work, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: :delete_post %></td>
       </tr>
   <% end %>
   </tbody>
 </table>
 
-<%= render partial: 'form', locals: { remote: true, vehicle_id: params[:vehicle_id] } %>
+<br/>
+
+<%= link_to 'New Work', new_work_path(params: { vehicle_id: params[:vehicle_id] }), remote: true %>
+
+<%= hidden_field_tag :table_row_position %>
+
+<div id="container"></div>

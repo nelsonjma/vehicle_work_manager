@@ -1,4 +1,4 @@
-<%= form_for(@work, remote: remote) do |f| %>
+<%= form_for(@work, remote: true) do |f| %>
     <% if @work.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@work.errors.count, 'error') %>:</h2>
@@ -11,11 +11,7 @@
         </div>
     <% end %>
 
-    <% if vehicle_id != nil %>
-        <%= f.hidden_field :vehicle_id, value: vehicle_id %>
-    <% else %>
-        <%= f.hidden_field :vehicle_id %>
-    <% end %>
+    <%= f.hidden_field :vehicle_id %>
 
     <div class="field">
       <%= f.label 'descrição:' %> <br>

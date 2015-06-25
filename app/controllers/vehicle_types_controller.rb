@@ -2,7 +2,6 @@ class VehicleTypesController < ApplicationController
 
   before_action :authenticated
 
-  before_action :authenticated
   before_action :set_vehicle_type, only: [:edit, :update, :destroy]
 
   def index
@@ -21,7 +20,7 @@ class VehicleTypesController < ApplicationController
 
     respond_to do |format|
       if @vehicle_type.save
-        format.html { redirect_to vehicle_types_url, notice: 'Tipo de veiculo criado com sucesso.' }
+        format.html { redirect_to vehicle_types_path, notice: 'Tipo de veiculo criado com sucesso.' }
       else
         format.html { render :new }
         format.json { render json: @vehicle_type.errors, status: :unprocessable_entity }
@@ -32,7 +31,7 @@ class VehicleTypesController < ApplicationController
   def update
     respond_to do |format|
       if @vehicle_type.update(vehicle_type_params)
-        format.html { redirect_to vehicle_types_url, notice: 'Tipo de veiculo actualizado com sucesso.' }
+        format.html { redirect_to vehicle_types_path, notice: 'Tipo de veiculo actualizado com sucesso.' }
       else
         format.html { render :edit }
         format.json { render json: @vehicle_type.errors, status: :unprocessable_entity }
@@ -44,7 +43,6 @@ class VehicleTypesController < ApplicationController
     @vehicle_type.destroy
 
     respond_to do |format|
-      format.html { render :index, notice: 'Tipo de veiculo eliminado com sucesso.' }
       format.js   { }
     end
   end

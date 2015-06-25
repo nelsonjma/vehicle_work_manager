@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   get '/login'  => 'session#new',      :as => 'login'
   get '/logout' => 'session#destroy',  :as => 'logout'
 
-  resources :vehicles,              :only => [:index, :edit, :create, :update, :destroy]
+  resources :vehicles,              :only => [:index, :new, :edit, :create, :update, :destroy]
 
   resources :vehicle_types,         :only => [:index, :new, :edit, :create, :update, :destroy]
 
-  resources :works,                 :only => [:index, :edit, :create, :update, :destroy]
+  resources :works,                 :only => [:index, :new, :edit, :create, :update, :destroy]
 
   resources :tasks,                 :only => [:index, :new, :edit, :create, :update, :destroy]
 

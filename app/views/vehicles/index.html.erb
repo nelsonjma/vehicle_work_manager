@@ -17,11 +17,18 @@
         <td><%= vehicle['name'] %></td>
         <td><%= vehicle['description'] %></td>
 
-        <td><%= link_to 'Edit', edit_vehicle_path(vehicle['id']) %></td>
+        <td><%= link_to 'Edit', edit_vehicle_path(vehicle['id']), remote: true, class: :update_post  %></td>
         <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: :delete_post %></td>
       </tr>
     <% end  %>
   </tbody>
 </table>
 
-<%= render partial: 'form', locals: { remote: true} %>
+<br/>
+
+<%= link_to 'New Vehicle', new_vehicle_path, remote: true %>
+
+<%= hidden_field_tag :table_row_position %>
+
+<div id="container"></div>
+

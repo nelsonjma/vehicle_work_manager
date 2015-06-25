@@ -1,0 +1,14 @@
+$('#container').html("");
+
+var row_position = $('#table_row_position').val();
+
+var selected_row = $('#vehicle_tbody').find('> tr:eq(' + row_position + ')');
+
+var link = selected_row.find('> td:eq(0)').find('a').first();
+var linkImg = $(link).find('img').first();
+
+$(link).attr('href', '<%= works_path(params: { vehicle_id: @vehicle.id.to_s }) %>');
+$(linkImg).attr('src', '<%= @vehicle_details.image %>');
+
+selected_row.find('> td:eq(1)').html("<%= @vehicle_details.name %>");
+selected_row.find('> td:eq(2)').html("<%= @vehicle.description %>");
