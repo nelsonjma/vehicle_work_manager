@@ -19,4 +19,12 @@ class ApplicationController < ActionController::Base
     logged_in? || access_denied
   end
 
+  ###############################################################
+  def generic_form_error_hander(format, title, messages)
+    @error_title    = title
+    @error_messages = messages
+
+    format.js   { render :template => 'layouts/generic_form_error.js.erb', :layout => false }
+  end
+
 end

@@ -26,7 +26,7 @@ class WorkTasksController < ApplicationController
 
         format.js   {}
       else
-        format.json { render json: @work_task.errors, status: :unprocessable_entity }
+        generic_form_error_hander(format, 'Erro ao adicionar tarefa', @work_task.errors.full_messages)
       end
     end
   end
@@ -38,17 +38,20 @@ class WorkTasksController < ApplicationController
 
         format.js   {}
       else
-        format.json { render json: @work_task.errors, status: :unprocessable_entity }
-        #format.js { render :js => "alert('error');" }
+        generic_form_error_hander(format, 'Erro ao actualizar tarefa', @work_task.errors.full_messages)
       end
     end
   end
 
   def destroy
-    @work_task.destroy
-
     respond_to do |format|
-      format.js   {}
+      if @work_task.task_items.count == 0
+        @work_task.destroy
+
+        format.js   {}
+      else
+        generic_form_error_hander(format, 'Erro ao eliminar tarefa', ['Tarefa tem items de stock, não pode ser eliminada.'])
+      end
     end
   end
 

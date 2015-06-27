@@ -1,27 +1,31 @@
-<h1>Tipos de Veiculos</h1>
+<div class="container">
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Imagem</th>
-      <th>Nome</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
+  <div class="row">
+    <%= link_to 'Novo Tipo de Veiculo', new_vehicle_type_path, class: 'btn btn-primary' %>
+  </div>
 
-  <tbody>
-    <% @vehicle_types.each do |vehicle_type| %>
+  <div class="row">
+    <table class="table">
+      <thead>
       <tr>
-        <td><%= image_tag vehicle_type.image %></td>
-        <td><%= vehicle_type.name %></td>
-
-        <td><%= link_to 'Edit', edit_vehicle_type_path(vehicle_type) %></td>
-        <td><%= link_to 'Destroy', vehicle_type, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: :delete_post %></td>
+        <th>Imagem</th>
+        <th>Nome</th>
+        <th colspan="2"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<br>
+      <tbody>
+      <% @vehicle_types.each do |vehicle_type| %>
+          <tr>
+            <td><%= image_tag vehicle_type.image %></td>
+            <td><%= vehicle_type.name %></td>
 
-<%= link_to 'New Vehicle type', new_vehicle_type_path %>
+            <td><%= link_to 'Edit', edit_vehicle_type_path(vehicle_type) %></td>
+            <td><%= link_to 'Destroy', vehicle_type, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: :delete_post %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+</div>

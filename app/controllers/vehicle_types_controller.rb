@@ -22,8 +22,7 @@ class VehicleTypesController < ApplicationController
       if @vehicle_type.save
         format.html { redirect_to vehicle_types_path, notice: 'Tipo de veiculo criado com sucesso.' }
       else
-        format.html { render :new }
-        format.json { render json: @vehicle_type.errors, status: :unprocessable_entity }
+        generic_form_error_hander(format, 'Erro ao criar tipo de veiculo', @vehicle_type.errors.full_messages)
       end
     end
   end
@@ -33,8 +32,7 @@ class VehicleTypesController < ApplicationController
       if @vehicle_type.update(vehicle_type_params)
         format.html { redirect_to vehicle_types_path, notice: 'Tipo de veiculo actualizado com sucesso.' }
       else
-        format.html { render :edit }
-        format.json { render json: @vehicle_type.errors, status: :unprocessable_entity }
+        generic_form_error_hander(format, 'Erro ao actualizar tipo de veiculo', @vehicle_type.errors.full_messages)
       end
     end
   end

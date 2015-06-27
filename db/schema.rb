@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150619225710) do
+ActiveRecord::Schema.define(version: 20150626061706) do
 
   create_table "stock_items", force: :cascade do |t|
     t.string   "code"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20150619225710) do
     t.string   "pin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "permission"
   end
 
   create_table "vehicle_types", force: :cascade do |t|

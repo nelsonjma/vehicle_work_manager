@@ -1,0 +1,12 @@
+$('#error_title').html('<%= @error_title %>');
+
+$('#error_body').html('' +
+    <% @error_messages.each do |message| %>
+        '<p><%= message %></p>' +
+    <% end %>
+'');
+
+// close create/edit modal if open
+$('#addEditModal').modal('hide');
+
+$('#errorModal').modal('show');

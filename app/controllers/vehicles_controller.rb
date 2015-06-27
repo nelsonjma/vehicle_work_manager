@@ -32,7 +32,7 @@ class VehiclesController < ApplicationController
 
         format.js   {}
       else
-        format.json { render json: @vehicle.errors, status: :unprocessable_entity }
+        generic_form_error_hander(format, 'Erro ao criar veiculo', @vehicle.errors.full_messages)
       end
     end
   end
@@ -44,17 +44,20 @@ class VehiclesController < ApplicationController
 
         format.js   {}
       else
-        format.json { render json: @vehicle.errors, status: :unprocessable_entity }
+        generic_form_error_hander(format, 'Erro ao actualizar veiculo', @vehicle.errors.full_messages)
       end
     end
   end
 
   def destroy
-    @vehicle.destroy
-
     respond_to do |format|
-      format.html { render :index, notice: 'Veiculo eliminado com sucesso.' }
-      format.js   {  }
+      if @vehicle.works.count == 0
+        @vehicle.destroy
+
+        format.js   {  }
+      else
+        generic_form_error_hander(format, 'Erro ao eliminar veiculo', ['O veiculo tem obras, não pode ser eliminado.'])
+      end
     end
   end
 

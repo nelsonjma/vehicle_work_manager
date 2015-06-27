@@ -23,7 +23,7 @@ class WorksController < ApplicationController
       if @work.save
         format.js   {}
       else
-        format.json { render json: @work.errors, status: :unprocessable_entity }
+        generic_form_error_hander(format, 'Erro ao criar obra', @work.errors.full_messages)
       end
     end
   end
@@ -33,18 +33,20 @@ class WorksController < ApplicationController
       if @work.update(work_params)
         format.js   {}
       else
-        format.html { render :edit }
-        format.json { render json: @work.errors, status: :unprocessable_entity }
+        generic_form_error_hander(format, 'Erro ao actualizar obra', @work.errors.full_messages)
       end
     end
   end
 
   def destroy
-    @work.destroy
-
     respond_to do |format|
-      format.html { render :index, notice: 'Obra eliminada com sucesso.' }
-      format.js   {  }
+      if @work.work_tasks.count == 0
+        @work.destroy
+
+        format.js   {  }
+      else
+        generic_form_error_hander(format, 'Erro ao eliminar obra', ['Obra tem tarefas, não pode ser eliminada.'])
+      end
     end
   end
 

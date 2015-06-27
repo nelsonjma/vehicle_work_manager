@@ -1,37 +1,38 @@
-<%= form_for(@stock_item, remote: true) do |f| %>
-  <% if @stock_item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@stock_item.errors.count, 'error') %> :</h2>
+<%= form_for(@stock_item, remote: true, :html => { class: 'form-horizontal', role: 'form' }) do |f| %>
 
-      <ul>
-      <% @stock_item.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="form-group">
+      <%= f.label 'codigo:', class: 'control-label col-sm-2' %>
+      <div class="col-sm-4">
+        <%= f.text_field :code, class: 'form-control' %>
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label 'codigo:' %>
-    <%= f.text_field :code %>
-  </div>
+    <div class="form-group">
+        <%= f.label 'nome:', class: 'control-label col-sm-2' %>
+        <div class="col-sm-10">
+            <%= f.text_field :name, class: 'form-control' %>
+        </div>
+    </div>
 
-  <div class="field">
-    <%= f.label 'nome:' %>
-    <%= f.text_field :name %>
-  </div>
+    <div class="form-group">
+      <%= f.label 'descrição:', class: 'control-label col-sm-2' %>
+      <div class="col-sm-10">
+        <%= f.text_area :description, class: 'form-control' %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label 'descrição:' %>
-    <%= f.text_area :description %>
-  </div>
+    <div class="form-group">
+      <%= f.label 'quantidade:', class: 'control-label col-sm-2' %>
+      <div class="col-sm-4">
+        <%= f.text_field :qtd, class: 'form-control' %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label 'quantidade:' %>
-    <%= f.text_field :qtd %>
-  </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <%= f.submit 'Guardar', class: 'btn btn-default add_edit_form_submit'  %>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        </div>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

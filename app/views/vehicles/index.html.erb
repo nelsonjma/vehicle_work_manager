@@ -1,34 +1,40 @@
-<h1>Veiculos</h1>
+<div class="container">
 
-<table class="table">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Tipo</th>
-      <th>Descrição</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-  <tbody id="vehicle_tbody">
-    <% @vehicles.each do | vehicle | %>
+  <div class="row">
+    <%= link_to 'Novo Veiculo', new_vehicle_path, remote: true, class: 'btn btn-primary' %>
+  </div>
+
+  <div class="row">
+    <table class="table">
+      <thead>
       <tr>
-        <td><%= link_to image_tag(vehicle['image']), works_path(params: { vehicle_id: vehicle['id'] }) %></td>
-
-        <td><%= vehicle['name'] %></td>
-        <td><%= vehicle['description'] %></td>
-
-        <td><%= link_to 'Edit', edit_vehicle_path(vehicle['id']), remote: true, class: :update_post  %></td>
-        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: :delete_post %></td>
+        <th></th>
+        <th>Tipo</th>
+        <th>Descrição</th>
+        <th colspan="2"></th>
       </tr>
-    <% end  %>
-  </tbody>
-</table>
+      </thead>
+      <tbody id="vehicle_tbody">
+      <% @vehicles.each do | vehicle | %>
+          <tr>
+            <td><%= link_to image_tag(vehicle['image']), works_path(params: { vehicle_id: vehicle.id }) %></td>
 
-<br/>
+            <td><%= vehicle.name %></td>
+            <td><%= vehicle.description %></td>
 
-<%= link_to 'New Vehicle', new_vehicle_path, remote: true %>
+            <td><%= link_to 'Edit', edit_vehicle_path(vehicle), remote: true, class: :update_post  %></td>
+            <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: :delete_post %></td>
+          </tr>
+      <% end  %>
+      </tbody>
+    </table>
 
-<%= hidden_field_tag :table_row_position %>
+    <%= hidden_field_tag :table_row_position %>
 
-<div id="container"></div>
+    <div id="form_container"></div>
+  </div>
+
+</div>
+
+
 

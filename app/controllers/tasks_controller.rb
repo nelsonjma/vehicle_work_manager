@@ -20,10 +20,9 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-
         format.js   {}
       else
-        format.json { render json: @task.errors, status: :unprocessable_entity }
+        generic_form_error_hander(format, 'Erro ao criar tarefa', @task.errors.full_messages)
       end
     end
   end
@@ -31,11 +30,9 @@ class TasksController < ApplicationController
   def update
     respond_to do |format|
       if @task.update(task_params)
-
         format.js {}
       else
-        format.html { render :edit }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
+        generic_form_error_hander(format, 'Erro ao actualizar tarefa', @task.errors.full_messages)
       end
     end
   end

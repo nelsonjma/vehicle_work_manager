@@ -7,4 +7,9 @@ class User < ActiveRecord::Base
 
     return (user.is_a? User) ? user : nil
   end
+
+  def is_admin?
+    return true if permission == 0
+    return false
+  end
 end

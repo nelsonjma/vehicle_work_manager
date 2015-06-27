@@ -1,34 +1,39 @@
-<h1>Obra - Tarefas</h1>
+<div class="container">
 
-<table class="table">
-  <thead>
-  <tr>
-    <th>Nome</th>
-    <th>Descrição</th>
-    <th>Ut</th>
-    <th colspan="2"></th>
-  </tr>
-  </thead>
+  <div class="row">
+    <%= link_to 'Back', works_path(params: { vehicle_id: params[:vehicle_id] }), class: 'btn btn-primary' %>
+    <%= link_to 'Adicionar Tarefa', new_work_task_path(params: { work_id: @work_id }), remote: true, class: 'btn btn-primary' %>
+  </div>
 
-  <tbody id="work_task_tbody">
-  <% @work_tasks.each do |work_task| %>
+  <div class="row">
+    <table class="table">
+      <thead>
       <tr>
-        <td><%= work_task.name %></td>
-        <td><%= work_task.description %></td>
-        <td><%= work_task.ut %></td>
-
-        <td><%= link_to 'Show Items', task_items_path(params: { work_task_id: work_task.id }) %></td>
-        <td><%= link_to 'Edit', edit_work_task_path(work_task.id), remote: true, class: :update_post %></td>
-        <td><%= link_to 'Destroy', work_task_path(work_task.id), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: :delete_post %></td>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Ut</th>
+        <th colspan="2"></th>
       </tr>
-  <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<br>
+      <tbody id="work_task_tbody">
+      <% @work_tasks.each do |work_task| %>
+          <tr>
+            <td><%= work_task.name %></td>
+            <td><%= work_task.description %></td>
+            <td><%= work_task.ut %></td>
 
-<%= hidden_field_tag :table_row_position %>
+            <td><%= link_to 'Show Items', task_items_path(params: { work_task_id: work_task.id, work_id: @work_id, vehicle_id: params[:vehicle_id] }) %></td>
+            <td><%= link_to 'Edit', edit_work_task_path(work_task.id), remote: true, class: :update_post %></td>
+            <td><%= link_to 'Destroy', work_task_path(work_task.id), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: :delete_post %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
 
-<%= link_to 'New Item', new_work_task_path(params: { work_id: @work_id }), remote: true %>
+    <%= hidden_field_tag :table_row_position %>
 
-<div id="container"></div>
+    <div id="form_container"></div>
+  </div>
+
+</div>

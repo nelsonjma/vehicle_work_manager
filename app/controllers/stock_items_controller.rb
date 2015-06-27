@@ -12,7 +12,7 @@ class StockItemsController < ApplicationController
     sort      = sort_column(:sort, :created_at)
     direction = sort_direction(:direction)
 
-    @stock_items = StockItem.search(params[:search]).order("#{sort} #{direction}").paginate(:per_page => 2, :page => params[:page])
+    @stock_items = StockItem.search(params[:search]).order("#{sort} #{direction}").paginate(:per_page => 15, :page => params[:page])
   end
 
   def new
@@ -29,7 +29,7 @@ class StockItemsController < ApplicationController
       if @stock_item.save
         format.js   {}
       else
-        format.json { render json: @stock_item.errors, status: :unprocessable_entity }
+        generic_form_error_hander(format, 'Erro ao actualizar stock', @stock_item.errors.full_messages)
       end
     end
   end
@@ -39,8 +39,7 @@ class StockItemsController < ApplicationController
       if @stock_item.update(stock_item_params)
         format.js   {}
       else
-        format.json { render json: @stock_item.errors, status: :unprocessable_entity }
-        #format.js { render :js => "alert('error');" }
+        generic_form_error_hander(format, 'Erro ao actualizar stock', @stock_item.errors.full_messages)
       end
     end
   end

@@ -35,7 +35,7 @@ class TaskItemsController < ApplicationController
 
         format.js   {}
       else
-        format.json { render json: @task_item.errors, status: :unprocessable_entity }
+        generic_form_error_hander(format, 'Erro ao adicionar item', @task_item.errors.full_messages)
       end
     end
   end
@@ -51,8 +51,7 @@ class TaskItemsController < ApplicationController
 
         format.js   {}
       else
-        format.json { render json: @task_item.errors, status: :unprocessable_entity }
-        #format.js { render :js => "alert('error');" }
+        generic_form_error_hander(format, 'Erro ao actualizar item', @task_item.errors.full_messages)
       end
     end
   end

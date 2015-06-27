@@ -17,24 +17,35 @@
 
     <div class="navbar navbar-inverse navbar-static-top">
       <div class="container-fluid">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= brand %>
+
+        </div>
+
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li data-no-turbolink><%= link_to 'Stock', '/stock_items' %></li>
-            <li data-no-turbolink><%= link_to 'Tarefas', '/tasks' %></li>
-            <li data-no-turbolink><%= link_to 'Veiculos', '/vehicles' %></li>
-            <li data-no-turbolink><%= link_to 'Tipos de Veiculos', '/vehicle_types' %></li>
+            <li><%= link_to 'Stock', '/stock_items' %></li>
+            <li><%= link_to 'Veiculos', '/vehicles' %></li>
+
+            <%= admin_operations %>
+
           </ul>
         </div>
       </div>
     </div>
+
     <%= bootstrap_flash %>
 
     <%= yield %>
+
+    <%= render partial: 'layouts/partials/error_popup' %>
+
+    <%= render partial: 'layouts/partials/add_and_edit_popup' %>
 
 </body>
 </html>

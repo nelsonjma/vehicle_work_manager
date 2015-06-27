@@ -1,34 +1,45 @@
-<h1>Obra</h1>
+<div class="container">
 
-<table class="table">
-  <thead>
+  <div class="row">
+    <%= link_to 'Back', vehicles_path, class: 'btn btn-primary' %>
+    <%= link_to 'Nova Obra', new_work_path(params: { vehicle_id: params[:vehicle_id] }), remote: true, class: 'btn btn-primary' %>
+  </div>
+
+  <div class="row">
+    <table class="table">
+      <thead>
       <tr>
         <th>descrição</th>
         <th>notas</th>
-        <th>trabalho terminado?</th>
-        <th colspan="2"></th>
+        <th>terminada?</th>
+        <th colspan="3"></th>
       </tr>
-  </thead>
+      </thead>
 
-  <tbody id="work_tbody">
-  <% @works.each do |work| %>
-      <tr>
-        <td><%= work.description %></td>
-        <td><%= work.notes %></td>
-        <td><%= work.finished %></td>
+      <tbody id="work_tbody">
+      <% @works.each do |work| %>
+          <tr>
+            <td><%= work.description %></td>
+            <td><%= work.notes %></td>
+            <td><%= work.finished ? 'sim' : 'não' %></td>
 
-        <td><%= link_to 'Show Tasks', work_tasks_path(params: { work_id: work.id }) %></td>
-        <td><%= link_to 'Edit', edit_work_path(work), remote: true, class: :update_post %></td>
-        <td><%= link_to 'Destroy', work, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: :delete_post %></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
+            <td><%= link_to 'Show Tasks', work_tasks_path(params: { work_id: work.id, vehicle_id: params[:vehicle_id] }) %></td>
+            <td><%= link_to 'Edit', edit_work_path(work), remote: true, class: :update_post %></td>
+            <td><%= link_to 'Destroy', work, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: :delete_post %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
 
-<br/>
+    <%= hidden_field_tag :table_row_position %>
 
-<%= link_to 'New Work', new_work_path(params: { vehicle_id: params[:vehicle_id] }), remote: true %>
+    <div id="form_container"></div>
+  </div>
 
-<%= hidden_field_tag :table_row_position %>
+</div>
 
-<div id="container"></div>
+
+
+
+
+

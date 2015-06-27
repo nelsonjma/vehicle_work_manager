@@ -1,5 +1,6 @@
-<div class="forms_table">
-  <div class="form_row">
+<div class="container">
+
+  <div class="row">
     <div class="field">
       <%= label_tag 'Item do Stock:' %> <br>
 
@@ -14,20 +15,9 @@
       <% end %>
     </div>
   </div>
-  <div class="form_row">
+
+  <div class="row">
     <%= form_for(@task_item, remote: true) do |f| %>
-        <% if @task_item.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(@task_item.errors.count, 'error') %>:</h2>
-
-              <ul>
-                <% @task_item.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                <% end %>
-              </ul>
-            </div>
-        <% end %>
-
         <% if work_task_id != nil %>
             <%= f.hidden_field :work_task_id, value: work_task_id %>
         <% else %>
@@ -51,6 +41,7 @@
         <%= f.submit %>
     <% end %>
   </div>
+
 </div>
 
 
@@ -68,14 +59,5 @@
 
     #stock_item_selectors_search {
         margin-bottom: 10px;
-    }
-
-    .forms_table {
-        display: table;
-        width: 100%;
-    }
-
-    .form_row  {
-        display: table-row;
     }
 </style>
