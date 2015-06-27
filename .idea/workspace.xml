@@ -1,59 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07f3b433-cb85-45e8-911b-8fde9dbc85d9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/layouts/partials/_add_and_edit_popup.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/layouts/partials/_error_popup.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/layouts/generic_form_error.js.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/layout_operations/generic_layout_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/layout_operations/user_layout_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/stock_items/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/stock_items/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/task_items/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/task_items/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tasks/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/tasks/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/vehicles/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/vehicles/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/stock_items/_stock_items.html.erb" afterPath="$PROJECT_DIR$/app/views/stock_items/_stock_items.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/stock_items/create.js.erb" afterPath="$PROJECT_DIR$/app/views/stock_items/create.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/task_items/create.js.erb" afterPath="$PROJECT_DIR$/app/views/task_items/create.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tasks/create.js.erb" afterPath="$PROJECT_DIR$/app/views/tasks/create.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/vehicles/create.js.erb" afterPath="$PROJECT_DIR$/app/views/vehicles/create.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/work_tasks/create.js.erb" afterPath="$PROJECT_DIR$/app/views/work_tasks/create.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/works/create.js.erb" afterPath="$PROJECT_DIR$/app/views/works/create.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/stock_items/edit.js.erb" afterPath="$PROJECT_DIR$/app/views/stock_items/edit.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/task_items/edit.js.erb" afterPath="$PROJECT_DIR$/app/views/task_items/edit.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tasks/edit.js.erb" afterPath="$PROJECT_DIR$/app/views/tasks/edit.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/vehicles/edit.js.erb" afterPath="$PROJECT_DIR$/app/views/vehicles/edit.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/work_tasks/edit.js.erb" afterPath="$PROJECT_DIR$/app/views/work_tasks/edit.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/works/edit.js.erb" afterPath="$PROJECT_DIR$/app/views/works/edit.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/stock_items/index.html.erb" afterPath="$PROJECT_DIR$/app/views/stock_items/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/task_items/index.html.erb" afterPath="$PROJECT_DIR$/app/views/task_items/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tasks/index.html.erb" afterPath="$PROJECT_DIR$/app/views/tasks/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/vehicle_types/index.html.erb" afterPath="$PROJECT_DIR$/app/views/vehicle_types/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/vehicles/index.html.erb" afterPath="$PROJECT_DIR$/app/views/vehicles/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/work_tasks/index.html.erb" afterPath="$PROJECT_DIR$/app/views/work_tasks/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/works/index.html.erb" afterPath="$PROJECT_DIR$/app/views/works/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/stock_items/new.js.erb" afterPath="$PROJECT_DIR$/app/views/stock_items/new.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/task_items/new.js.erb" afterPath="$PROJECT_DIR$/app/views/task_items/new.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tasks/new.js.erb" afterPath="$PROJECT_DIR$/app/views/tasks/new.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/vehicles/new.js.erb" afterPath="$PROJECT_DIR$/app/views/vehicles/new.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/work_tasks/new.js.erb" afterPath="$PROJECT_DIR$/app/views/work_tasks/new.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/works/new.js.erb" afterPath="$PROJECT_DIR$/app/views/works/new.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/stock_items_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/stock_items_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/task_items_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/task_items_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/tasks_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/tasks_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/stock_items/update.js.erb" afterPath="$PROJECT_DIR$/app/views/stock_items/update.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/task_items/update.js.erb" afterPath="$PROJECT_DIR$/app/views/task_items/update.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/tasks/update.js.erb" afterPath="$PROJECT_DIR$/app/views/tasks/update.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/vehicles/update.js.erb" afterPath="$PROJECT_DIR$/app/views/vehicles/update.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/work_tasks/update.js.erb" afterPath="$PROJECT_DIR$/app/views/work_tasks/update.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/works/update.js.erb" afterPath="$PROJECT_DIR$/app/views/works/update.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/vehicle_types_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/vehicle_types_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/vehicles_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/vehicles_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/work_tasks_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/work_tasks_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/works_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/works_controller.rb" />
+    <list default="true" id="07f3b433-cb85-45e8-911b-8fde9dbc85d9" name="Default" comment="varias actualizações:&#10;&#10;O posicionamento das views já está +/- certo&#10;O form do stock items já está quase pronto (fora certos promenores).">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20150626061706_add_c_permission_users.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vehicle_work_manager.iws" />
@@ -267,11 +216,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -285,37 +230,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stock_items" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vehicle_work_manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vehicle_work_manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
+              <option name="myItemId" value="migrate" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -641,7 +560,13 @@
       <option name="project" value="LOCAL" />
       <updated>1435194470119</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="varias actualizações:&#10;&#10;O posicionamento das views já está +/- certo&#10;O form do stock items já está quase pronto (fora certos promenores).">
+      <created>1435364646906</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1435364646906</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView">
@@ -655,22 +580,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22417465" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32828283" sideWeight="0.4978701" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41919193" sideWeight="0.5149095" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16453674" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3242424" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32828283" sideWeight="0.4914803" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44646466" sideWeight="0.49574015" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22417465" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16453674" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3242424" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41919193" sideWeight="0.48509052" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -698,7 +623,8 @@
     <MESSAGE value="task_items - pull de ficheiro que faltava." />
     <MESSAGE value="task_items - xxxx" />
     <MESSAGE value="actualização do new/edit para o formato ajax, tirando o vehicle_type, não funciona bem quando se carrega uma image." />
-    <option name="LAST_COMMIT_MESSAGE" value="actualização do new/edit para o formato ajax, tirando o vehicle_type, não funciona bem quando se carrega uma image." />
+    <MESSAGE value="varias actualizações:&#10;&#10;O posicionamento das views já está +/- certo&#10;O form do stock items já está quase pronto (fora certos promenores)." />
+    <option name="LAST_COMMIT_MESSAGE" value="varias actualizações:&#10;&#10;O posicionamento das views já está +/- certo&#10;O form do stock items já está quase pronto (fora certos promenores)." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
