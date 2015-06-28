@@ -23,6 +23,7 @@ class WorkTasksController < ApplicationController
     respond_to do |format|
       if @work_task.save
         @task_details = Task.find(@work_task.task_id)
+        @vehicle_id   = Work.find(@work_task.work_id).vehicle_id
 
         format.js   {}
       else

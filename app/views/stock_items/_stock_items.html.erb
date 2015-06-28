@@ -1,7 +1,8 @@
-
 <%= hidden_field_tag :direction, params[:direction] %>
 <%= hidden_field_tag :sort, params[:sort] %>
 <%= hidden_field_tag :table_row_position %>
+
+<% you_are_admin = just_for_admin_user %>
 
 <table class="table table-condensed">
     <thead id="stock_items_thead">
@@ -10,7 +11,11 @@
           <th><%= sortable(:sort, :direction, 'created_at','name','Nome', true) %></th>
           <th><%= sortable(:sort, :direction, 'created_at','description','Descrição', true) %></th>
           <th><%= sortable(:sort, :direction, 'created_at','qtd','Quantidade', true) %></th>
+
           <th colspan="3"></th>
+
+          <%= tag(:th, colspan: (you_are_admin ? 2 : 1)) %>
+
         </tr>
     </thead>
 
@@ -23,7 +28,8 @@
           <td><%= stock_item.qtd %></td>
 
           <td><%= link_to 'Editar', edit_stock_item_path(stock_item), remote: true, class: 'update_post btn btn-warning' %></td>
-          <td><%= link_to 'Eliminar', stock_item, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger' %></td>
+          <%= content_tag(:td, (link_to 'Eliminar', stock_item, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger')) if you_are_admin %>
+
         </tr>
     <% end %>
     </tbody>

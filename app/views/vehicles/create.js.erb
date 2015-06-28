@@ -1,9 +1,13 @@
+<% you_are_admin = just_for_admin_user %>
+
 rowContent = '<tr>' +
         '<td><%= link_to (image_tag @vehicle_details.image), works_path(params: { vehicle_id: @vehicle.id.to_s }) %></td>' +
         '<td><%= @vehicle_details.name %></td>' +
         '<td><%= @vehicle.description %></td>' +
-        '<td><%= link_to 'Editar', edit_vehicle_path(@vehicle.id.to_s), remote: true, class: 'update_post btn btn-warning' %></td>' +
-        '<td><%= link_to 'Eliminar', vehicle_path(@vehicle.id.to_s), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger' %></td>' +
+
+        '<%= content_tag(:td, (link_to 'Editar', edit_vehicle_path(@vehicle.id.to_s), remote: true, class: 'update_post btn btn-warning')) if you_are_admin %>' +
+        '<%= content_tag(:td, (link_to 'Eliminar', vehicle_path(@vehicle.id.to_s), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger')) if you_are_admin %>' +
+
         '</tr>'
 
 insertRowAfter('vehicle_tbody', rowContent);

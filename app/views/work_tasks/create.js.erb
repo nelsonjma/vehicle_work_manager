@@ -1,10 +1,15 @@
+<% you_are_admin = just_for_admin_user %>
+
 var rowContent = '<tr>' +
         '<td><%= @task_details.name %></td>' +
         '<td><%= @task_details.description %></td>' +
         '<td><%= @work_task.ut %></td>' +
-        '<td><%= link_to 'Items', task_items_path(params: { work_task_id: @work_task.id }), class: 'btn btn-info' %></td>' +
-        '<td><%= link_to 'Editar', edit_work_task_path(@work_task.id), remote: true, class: 'update_post btn btn-warning' %></td>' +
-        '<td><%= link_to 'Eliminar', work_task_path(@work_task.id), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger' %></td>' +
+
+        '<td><%= link_to 'Items', task_items_path(params: { work_task_id: @work_task.id, work_id: @work_task.work_id, vehicle_id: @vehicle_id }), class: 'btn btn-info' %></td>' +
+
+        '<%= content_tag(:td, (link_to 'Editar', edit_work_task_path(@work_task.id), remote: true, class: 'update_post btn btn-warning')) if you_are_admin %>' +
+        '<%= content_tag(:td, (link_to 'Eliminar', work_task_path(@work_task.id), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger')) if you_are_admin %>' +
+
         '</tr>';
 
 insertRowAfter('work_task_tbody', rowContent);

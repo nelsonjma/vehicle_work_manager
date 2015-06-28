@@ -10,7 +10,7 @@ module LayoutOperations
                                   }, class: 'dropdown-toggle', :data => { :toggle => 'dropdown' }, :aria => { haspopup: true, expanded: false }, :role => 'button', :href => '#')
 
       links = content_tag(:ul, capture {
-                               concat content_tag(:li, (link_to 'Tarefas', '/tasks'))
+                               concat content_tag(:li, (link_to 'Relatorios', '#'))
                                concat content_tag(:li, (link_to 'Tipos de Veiculos', '/vehicle_types'))
                              }, class: 'dropdown-menu')
 
@@ -20,6 +20,10 @@ module LayoutOperations
                          concat links
                        }, class: 'dropdown')
       }
+    end
+
+    def just_for_admin_user
+      current_user.is_admin?
     end
 
   end

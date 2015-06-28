@@ -24,18 +24,22 @@
             <span class="icon-bar"></span>
           </button>
           <%= brand %>
-
         </div>
 
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <li><%= link_to 'Stock', '/stock_items' %></li>
             <li><%= link_to 'Veiculos', '/vehicles' %></li>
+            <li><%= link_to 'Tarefas', '/tasks' %></li>
 
             <%= admin_operations %>
+          </ul>
 
+          <ul class="nav navbar-nav navbar-right">
+            <li data-no-turbolink><%= link_to 'Logout', '/logout' %></li>
           </ul>
         </div>
+
       </div>
     </div>
 

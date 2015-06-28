@@ -1,4 +1,4 @@
-$(document).ready(function() {
+var ready = function() {
     $("#stock_item_selectors_search").find("input").keyup(function(){
         var stock_item_selectors_search = $("#stock_item_selectors_search");
         $.get(stock_item_selectors_search.attr("action"), stock_item_selectors_search.serialize(), null, "script");
@@ -17,7 +17,10 @@ $(document).ready(function() {
         setStockItemName(this);
         e.preventDefault();
     });
-});
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
 
 function setStockItemId(button) {
     $('#task_item_stock_item_id').val($(button).attr('id'));

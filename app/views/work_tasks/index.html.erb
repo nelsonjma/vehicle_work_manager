@@ -1,5 +1,7 @@
 <%= hidden_field_tag :table_row_position %>
 
+<% you_are_admin = just_for_admin_user %>
+
 <div class="container">
 
   <div class="row">
@@ -14,7 +16,9 @@
         <th>Nome</th>
         <th>Descrição</th>
         <th>Ut</th>
-        <th colspan="2"></th>
+
+        <%= tag(:th, colspan: '2') if you_are_admin %>
+
       </tr>
       </thead>
 
@@ -26,8 +30,10 @@
             <td><%= work_task.ut %></td>
 
             <td><%= link_to 'Items', task_items_path(params: { work_task_id: work_task.id, work_id: @work_id, vehicle_id: params[:vehicle_id] }), class: 'btn btn-info' %></td>
-            <td><%= link_to 'Editar', edit_work_task_path(work_task.id), remote: true, class: 'update_post btn btn-warning' %></td>
-            <td><%= link_to 'Eliminar', work_task_path(work_task.id), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger' %></td>
+
+            <%= content_tag(:td, (link_to 'Editar', edit_work_task_path(work_task.id), remote: true, class: 'update_post btn btn-warning')) if you_are_admin %>
+            <%= content_tag(:td, (link_to 'Eliminar', work_task_path(work_task.id), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger')) if you_are_admin %>
+
           </tr>
       <% end %>
       </tbody>

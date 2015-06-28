@@ -1,4 +1,5 @@
-$(document).ready(function() {
+
+var ready = function() {
 
     // substituido pelo remote: true no link do table > th
     //$(document).on('click', '#stock_items_thead tr th a, #stock_items .pagination a', function(){
@@ -13,4 +14,7 @@ $(document).ready(function() {
         $.get(stock_items_search.attr("action"), stock_items_search.serialize(), null, "script");
         return false;
     });
-});
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

@@ -1,5 +1,7 @@
 <%= hidden_field_tag :table_row_position %>
 
+<% you_are_admin = just_for_admin_user %>
+
 <div class="container">
 
   <div class="row">
@@ -13,7 +15,9 @@
         <th></th>
         <th>Tipo</th>
         <th>Descrição</th>
-        <th colspan="2"></th>
+
+        <%= tag(:th, colspan: '2') if you_are_admin %>
+
       </tr>
       </thead>
       <tbody id="vehicle_tbody">
@@ -24,8 +28,8 @@
             <td><%= vehicle.name %></td>
             <td><%= vehicle.description %></td>
 
-            <td><%= link_to 'Editar', edit_vehicle_path(vehicle), remote: true, class: 'update_post btn btn-warning'  %></td>
-            <td><%= link_to 'Eliminar', vehicle, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger' %></td>
+            <%= content_tag(:td, (link_to 'Editar', edit_vehicle_path(vehicle), remote: true, class: 'update_post btn btn-warning')) if you_are_admin %>
+            <%= content_tag(:td, (link_to 'Eliminar', vehicle, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger')) if you_are_admin %>
           </tr>
       <% end  %>
       </tbody>
@@ -33,6 +37,3 @@
   </div>
 
 </div>
-
-
-

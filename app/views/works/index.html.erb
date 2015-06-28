@@ -1,5 +1,7 @@
 <%= hidden_field_tag :table_row_position %>
 
+<% you_are_admin = just_for_admin_user %>
+
 <div class="container">
 
   <div class="row">
@@ -14,7 +16,9 @@
         <th>descrição</th>
         <th>notas</th>
         <th>terminada?</th>
-        <th colspan="3"></th>
+
+        <%= tag(:th, colspan: (you_are_admin ? 3 : 1)) %>
+
       </tr>
       </thead>
 
@@ -26,8 +30,10 @@
             <td><%= work.finished ? 'sim' : 'não' %></td>
 
             <td><%= link_to 'Tarefas', work_tasks_path(params: { work_id: work.id, vehicle_id: params[:vehicle_id] }), class: 'btn btn-info' %></td>
-            <td><%= link_to 'Editar', edit_work_path(work), remote: true, class: 'update_post btn btn-warning' %></td>
-            <td><%= link_to 'Eliminar', work, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger' %></td>
+
+            <%= content_tag(:td, (link_to 'Editar', edit_work_path(work), remote: true, class: 'update_post btn btn-warning')) if you_are_admin %>
+            <%= content_tag(:td, (link_to 'Eliminar', work, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger')) if you_are_admin %>
+
           </tr>
       <% end %>
       </tbody>
