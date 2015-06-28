@@ -1,3 +1,5 @@
+<%= hidden_field_tag :table_row_position %>
+
 <div class="container">
 
   <div class="row">
@@ -5,7 +7,7 @@
   </div>
 
   <div class="row">
-    <table class="table">
+    <table class="table table-condensed">
       <thead>
       <tr>
         <th></th>
@@ -22,16 +24,12 @@
             <td><%= vehicle.name %></td>
             <td><%= vehicle.description %></td>
 
-            <td><%= link_to 'Edit', edit_vehicle_path(vehicle), remote: true, class: :update_post  %></td>
-            <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: :delete_post %></td>
+            <td><%= link_to 'Editar', edit_vehicle_path(vehicle), remote: true, class: 'update_post btn btn-warning'  %></td>
+            <td><%= link_to 'Eliminar', vehicle, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger' %></td>
           </tr>
       <% end  %>
       </tbody>
     </table>
-
-    <%= hidden_field_tag :table_row_position %>
-
-    <div id="form_container"></div>
   </div>
 
 </div>

@@ -1,3 +1,5 @@
+<%= hidden_field_tag :table_row_position %>
+
 <div class="container">
 
   <div class="row">
@@ -6,7 +8,7 @@
   </div>
 
   <div class="row">
-    <table class="table">
+    <table class="table table-condensed">
       <thead>
       <tr>
         <th>descrição</th>
@@ -23,17 +25,13 @@
             <td><%= work.notes %></td>
             <td><%= work.finished ? 'sim' : 'não' %></td>
 
-            <td><%= link_to 'Show Tasks', work_tasks_path(params: { work_id: work.id, vehicle_id: params[:vehicle_id] }) %></td>
-            <td><%= link_to 'Edit', edit_work_path(work), remote: true, class: :update_post %></td>
-            <td><%= link_to 'Destroy', work, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: :delete_post %></td>
+            <td><%= link_to 'Tarefas', work_tasks_path(params: { work_id: work.id, vehicle_id: params[:vehicle_id] }), class: 'btn btn-info' %></td>
+            <td><%= link_to 'Editar', edit_work_path(work), remote: true, class: 'update_post btn btn-warning' %></td>
+            <td><%= link_to 'Eliminar', work, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger' %></td>
           </tr>
       <% end %>
       </tbody>
     </table>
-
-    <%= hidden_field_tag :table_row_position %>
-
-    <div id="form_container"></div>
   </div>
 
 </div>

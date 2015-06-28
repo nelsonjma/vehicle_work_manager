@@ -1,29 +1,24 @@
-<%= form_for(@vehicle_type) do |f| %>
-  <% if @vehicle_type.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@vehicle_type.errors.count, 'error') %>:</h2>
+<%= form_for(@vehicle_type, :html => { class: 'form-horizontal', role: 'form' }) do |f| %>
 
-      <ul>
-      <% @vehicle_type.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="form-group">
+      <%= f.label 'Nome:', class: 'control-label col-sm-2' %>
+      <div class="col-sm-6">
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label 'nome:' %> <br/>
-    <%= f.text_field :name %>
-  </div>
+    <div class="form-group">
+      <%= f.label 'Imagem:', class: 'control-label col-sm-2' %>
+      <div class="col-sm-4">
+        <%= f.file_field :upload, class: 'btn btn-default' %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label 'imagem' %>
-    <%= f.file_field :upload %>
-  </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= f.submit 'Guardar', class: 'btn btn-default'  %>
+        <%= link_to 'Back', vehicle_types_path, data: { dismiss: 'modal' }, class: 'btn btn-default' %>
+      </div>
+    </div>
 
-  <br/>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

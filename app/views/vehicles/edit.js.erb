@@ -3,5 +3,7 @@ $('.update_post').bind('ajax:success', function() {
     $('#table_row_position').val(position);
 });
 
+$('#add_edit_body').html("<%= escape_javascript render(file: 'vehicles/edit.html.erb') %>");
+$('#add_edit_title').html("Editar Item")
 
-$('#form_container').html("<%= escape_javascript render(file: 'vehicles/edit.html.erb') %>");
+$('#addEditModal').modal('show');

@@ -1,13 +1,23 @@
-<%= form_for(@vehicle, remote: true) do |f| %>
-    <div class="field">
-      <%= f.label 'tipo de veiculo:' %><br>
-      <%= f.select(:vehicle_type_id, vehicle_type_list, :prompt => 'Selecionar') %>
+<%= form_for(@vehicle, remote: true, :html => { class: 'form-horizontal', role: 'form' }) do |f| %>
+    <div class="form-group">
+      <%= f.label 'Tipo de Veiculo:', class: 'control-label col-sm-2' %>
+      <div class="col-sm-4">
+        <%= f.select(:vehicle_type_id, vehicle_type_list, {:prompt => 'Selecionar'}, { :class => 'form-control'}) %>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label 'descrição:' %><br>
-      <%= f.text_field :description %>
+    <div class="form-group">
+      <%= f.label 'Descrição:', class: 'control-label col-sm-2' %>
+      <div class="col-sm-10">
+        <%= f.text_field :description, class: 'form-control' %>
+      </div>
     </div>
 
-    <%= f.submit %>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= f.submit 'Guardar', class: 'btn btn-default add_edit_form_submit'  %>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+
 <% end %>

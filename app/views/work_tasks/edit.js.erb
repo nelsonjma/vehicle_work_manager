@@ -3,4 +3,7 @@ $('.update_post').bind('ajax:success', function() {
     $('#table_row_position').val(position);
 });
 
-$('#form_container').html("<%= escape_javascript render(file: 'work_tasks/edit.html.erb') %>");
+$('#add_edit_body').html("<%= escape_javascript render(file: 'work_tasks/edit.html.erb') %>");
+$('#add_edit_title').html("Editar Tarefa")
+
+$('#addEditModal').modal('show');

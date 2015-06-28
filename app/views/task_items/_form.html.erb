@@ -1,49 +1,58 @@
-<div class="container">
+<%= form_tag( stock_item_selectors_path , {:method => 'get', :id => 'stock_item_selectors_search', class: 'form-horizontal', role: 'form' }) do %>
 
-  <div class="row">
-    <div class="field">
-      <%= label_tag 'Item do Stock:' %> <br>
+    <div class="input-group col-sm-4">
+      <%= text_field_tag :search, params[:search], class: 'form-control' %>
+      <span class="input-group-btn">
+          <%= submit_tag 'Search', :name => nil, :id => 'search_submit_tag', class: 'btn btn-default' %>
+        </span>
+    </div>
 
-      <%= build_stock_item_name(stock_item_name) %> <br><br>
+    <div class="table-responsive" id="stock_item_selectors">
+        <%= render partial: 'stock_item_selectors/stock_item_selectors' %>
+    </div>
 
-      <%= form_tag stock_item_selectors_path, :method => 'get', :id => 'stock_item_selectors_search' do %>
-          <p>
-            <%= text_field_tag :search, params[:search] %>
-            <%= submit_tag 'Search', :name => nil, :id => 'search_submit_tag' %>
-          </p>
-          <div id="stock_item_selectors"><%= render 'stock_item_selectors/stock_item_selectors' %></div>
-      <% end %>
+    <div class="form-group">
+      <%= label_tag 'Item:', nil, class: 'control-label col-sm-3' %>
+      <div class="col-sm-4">
+        <%= build_stock_item_name(stock_item_name) %>
+      </div>
+    </div>
+<% end %>
+
+<%= form_for(@task_item, remote: true, :html => { class: 'form-horizontal', role: 'form' }) do |f| %>
+
+  <% if work_task_id != nil %>
+      <%= f.hidden_field :work_task_id, value: work_task_id %>
+  <% else %>
+      <%= f.hidden_field :work_task_id %>
+  <% end %>
+
+  <%= f.hidden_field :user_id, value: current_user_id %>
+
+  <%= f.hidden_field :stock_item_id %>
+
+  <div class="form-group">
+    <%= f.label 'Observações:', class: 'control-label col-sm-3' %>
+    <div class="col-sm-8">
+      <%= f.text_area :note, class: 'form-control' %>
     </div>
   </div>
 
-  <div class="row">
-    <%= form_for(@task_item, remote: true) do |f| %>
-        <% if work_task_id != nil %>
-            <%= f.hidden_field :work_task_id, value: work_task_id %>
-        <% else %>
-            <%= f.hidden_field :work_task_id %>
-        <% end %>
-
-        <%= f.hidden_field :user_id, value: current_user_id %>
-
-        <%= f.hidden_field :stock_item_id %>
-
-        <div class="field">
-          <%= f.label 'Observações:' %> <br>
-          <%= f.text_field :note %>
-        </div>
-
-        <div class="field">
-          <%= f.label 'quantidade:' %> <br/>
-          <%= f.text_field :qtd %>
-        </div>
-
-        <%= f.submit %>
-    <% end %>
+  <div class="form-group">
+    <%= f.label 'Quantidade:', class: 'control-label col-sm-3' %>
+    <div class="col-sm-4">
+      <%= f.text_field :qtd, class: 'form-control' %>
+    </div>
   </div>
 
-</div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit 'Guardar', class: 'btn btn-default add_edit_form_submit' %>
+      <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+    </div>
+  </div>
 
+<% end %>
 
 <script type="text/javascript">
     <%= render :partial => 'stock_item_selector' %>
@@ -54,7 +63,7 @@
         height: 250px;
         overflow-y: scroll;
         overflow-x: hidden;
-        width: 60%;
+        width: 560px;
     }
 
     #stock_item_selectors_search {

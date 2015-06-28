@@ -6,20 +6,17 @@
     <br/>
 
     <%= form_tag stock_items_path, :method => 'get', :id => 'stock_items_search' do %>
-      <div class="row">
-        <p>
-          <%= text_field_tag :search, params[:search] %>
-          <%= submit_tag 'Search', :name => nil %>
-        </p>
+
+      <div class="input-group col-sm-4">
+        <%= text_field_tag :search, params[:search], class: 'form-control' %>
+        <span class="input-group-btn">
+          <%= submit_tag 'Search', :name => nil, class: 'btn btn-default' %>
+        </span>
       </div>
 
       <div id="stock_items" class="row"><%= render 'stock_items' %></div>
     <% end %>
-
 </div>
-
-
-<div id="form_container"></div>
 
 <% content_for :head do %>
     <script type="text/javascript">

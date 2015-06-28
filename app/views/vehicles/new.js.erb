@@ -1,1 +1,4 @@
-$('#form_container').html("<%= escape_javascript render(file: 'vehicles/new.html.erb') %>");
+$('#add_edit_body').html("<%= escape_javascript render(file: 'vehicles/new.html.erb') %>");
+$('#add_edit_title').html("Novo Item")
+
+$('#addEditModal').modal('show');

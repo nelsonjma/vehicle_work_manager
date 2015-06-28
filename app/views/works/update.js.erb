@@ -1,4 +1,5 @@
-$('#form_container').html("");
+// close create/edit modal
+$('#addEditModal').modal('hide');
 
 var row_position = $('#table_row_position').val();
 
@@ -6,4 +7,4 @@ var selected_row = $('#work_tbody').find('> tr:eq(' + row_position + ')');
 
 selected_row.find('> td:eq(0)').html("<%= @work.description %>");
 selected_row.find('> td:eq(1)').html("<%= @work.notes %>");
-selected_row.find('> td:eq(2)').html("<%= @work.finished %>");
+selected_row.find('> td:eq(2)').html("<%= @work.finished ? 'sim' : 'não' %>");

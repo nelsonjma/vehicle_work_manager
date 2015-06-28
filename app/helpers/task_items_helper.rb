@@ -18,9 +18,9 @@ module TaskItemsHelper
 
   def build_stock_item_name(name)
     if name
-      return capture { concat text_field_tag :stock_item_name, name }
+      return capture { concat text_field_tag :stock_item_name, name, class: 'form-control' }
     else
-      return capture { concat text_field_tag :stock_item_name }
+      return capture { concat text_field_tag :stock_item_name, nil, class: 'form-control' }
     end
   end
 
