@@ -5,8 +5,17 @@ class WorksController < ApplicationController
   before_action :set_vehicle_work, only: [:index, :new]
   before_action :set_work, only: [:edit, :update, :destroy]
 
+  include LayoutOperations::UserLayoutHelper
+
   def index
-    @works = @vehicle.works.all
+
+    if just_for_admin_user
+      @works = @vehicle.works.all
+    else
+      @works = @vehicle.works.not_finished_work
+    end
+
+
   end
 
   def new

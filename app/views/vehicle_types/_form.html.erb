@@ -16,9 +16,41 @@
 
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <%= f.submit 'Guardar', class: 'btn btn-default'  %>
+        <%= f.submit 'Guardar', class: 'btn btn-default add_edit_form_submit' %>
         <%= link_to 'Back', vehicle_types_path, data: { dismiss: 'modal' }, class: 'btn btn-default' %>
       </div>
     </div>
 
 <% end %>
+
+<script type="text/javascript" charset="utf-8">
+
+    $(document).ready(function(){
+        $(document).on('click', '.add_edit_form_submit', function(e){
+
+            var name = $("#vehicle_type_name").val().length;
+            var upload = $("#vehicle_type_upload").val().length;
+
+            if (name == 0 || upload == 0) {
+                errorManagement(name, upload);
+                e.preventDefault();
+            }
+        });
+    });
+
+    function errorManagement(name, upload) {
+        var msg = "";
+
+        if (name == 0)
+            msg += "Nome não está preenchido <br/>";
+
+        if (upload == 0)
+            msg += "Adicione uma imagem";
+
+        $('#error_title').html('Error Criar/Editar Tipo de Veiculo');
+        $('#error_body').html(msg);
+
+        $('#errorModal').modal('show');
+    }
+
+</script>

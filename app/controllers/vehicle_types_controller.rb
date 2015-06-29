@@ -38,11 +38,16 @@ class VehicleTypesController < ApplicationController
   end
 
   def destroy
-    @vehicle_type.destroy
-
     respond_to do |format|
-      format.js   { }
+      if @vehicle_type.vehicles.count == 0
+        @vehicle_type.destroy
+
+        format.js   {  }
+      else
+        generic_form_error_hander(format, 'Erro ao eliminar tipo de veiculo', ['O tipo de veiculo tem veiculos, não pode ser eliminado.'])
+      end
     end
+
   end
 
   private

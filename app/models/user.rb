@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
 
   has_many :task_items
 
+  validates :pin, uniqueness: true
+
   def self.authenticate(pin)
     user = find_by :pin => pin
 

@@ -4,16 +4,21 @@ class VehiclesController < ApplicationController
 
   before_action :set_vehicle, only: [:edit, :update, :destroy]
 
+  include LayoutOperations::UserLayoutHelper
+
   def index
-=begin
-    @vehicles       = Vehicle
-                        .with_work_not_finished
-                        .joins(:vehicle_type)
-                        .select('vehicles.id, vehicles.description, vehicle_types.name, vehicle_types.image')
-=end
-    @vehicles = Vehicle
+
+    if just_for_admin_user
+      @vehicles = Vehicle
                       .joins(:vehicle_type)
                       .select('vehicles.id, vehicles.description, vehicle_types.name, vehicle_types.image')
+    else
+      @vehicles       = Vehicle
+                            .with_work_not_finished
+                            .joins(:vehicle_type)
+                            .select('vehicles.id, vehicles.description, vehicle_types.name, vehicle_types.image')
+    end
+
   end
 
   def new

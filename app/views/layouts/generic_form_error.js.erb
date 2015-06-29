@@ -2,7 +2,8 @@ $('#error_title').html('<%= @error_title %>');
 
 $('#error_body').html('' +
     <% @error_messages.each do |message| %>
-        '<p><%= message %></p>' +
+        <% aux_message = (message.index('(') != nil) ? message[message.index('('), message.length].gsub('(', '').gsub(')', '') : message %>
+        '<p><%= aux_message %></p>' +
     <% end %>
 '');
 
