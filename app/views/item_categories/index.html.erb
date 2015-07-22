@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <%= link_to 'Novo Item', new_item_category_path, remote: true, class: 'btn btn-primary' %>
+  </div>
+
+  <br/>
+
+  <%= form_tag item_categories_path, :method => 'get', :id => 'item_categories_search' do %>
+
+      <div class="input-group col-sm-4">
+        <%= text_field_tag :search, params[:search], class: 'form-control' %>
+        <span class="input-group-btn">
+          <%= submit_tag 'Search', :name => nil, class: 'btn btn-default' %>
+        </span>
+      </div>
+
+      <div id="item_categories" class="row"><%= render 'item_categories' %></div>
+  <% end %>
+</div>
+
+<% content_for :head do %>
+    <script type="text/javascript">
+        <%= render :partial => 'index.js' %>
+    </script>
+<% end %>

@@ -11,15 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150626061706) do
+ActiveRecord::Schema.define(version: 20150722001512) do
+
+  create_table "item_categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "stock_items", force: :cascade do |t|
     t.string   "code"
     t.string   "name"
     t.text     "description"
     t.integer  "qtd"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "qtd_min"
+    t.integer  "item_category_id"
   end
 
   create_table "task_items", force: :cascade do |t|

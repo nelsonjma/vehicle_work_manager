@@ -29,7 +29,7 @@ class StockItemsController < ApplicationController
       if @stock_item.save
         format.js   {}
       else
-        generic_form_error_hander(format, 'Erro ao actualizar stock', @stock_item.errors.full_messages)
+        generic_form_error_hander(format, 'Erro ao adicionar item', @stock_item.errors.full_messages)
       end
     end
   end

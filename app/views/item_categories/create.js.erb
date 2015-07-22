@@ -1,0 +1,12 @@
+var rowContent = '<tr>' +
+        '<td><%= @item_category.name  %></td>' +
+
+        '<td><%= link_to 'Editar', edit_item_category_path(@item_category), remote: true, class: 'update_post btn btn-warning' %></td>' +
+        '<td><%= link_to 'Eliminar', @item_category, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger' %></td>' +
+
+        '</tr>';
+
+insertRowAfter('item_categories_tbody', rowContent);
+
+// close create/edit modal
+$('#addEditModal').modal('hide');

@@ -12,6 +12,7 @@ module LayoutOperations
       links = content_tag(:ul, capture {
                                concat content_tag(:li, (link_to 'Relatorios', '#'))
                                concat content_tag(:li, (link_to 'Tipos de Veiculos', '/vehicle_types'))
+                               concat content_tag(:li, (link_to 'Categorias de Produtos', '/item_categories'))
                              }, class: 'dropdown-menu')
 
       capture {

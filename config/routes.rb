@@ -22,4 +22,6 @@ Rails.application.routes.draw do
 
   resources :stock_item_selectors,  :only => [:index]
 
+  resources :item_categories,       :only => [:index, :new, :edit, :create, :update, :destroy]
+
 end

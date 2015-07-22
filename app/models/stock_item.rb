@@ -2,12 +2,16 @@ class StockItem < ActiveRecord::Base
 
   has_many :task_items
 
+  belongs_to :item_category
+
   validates_presence_of :code,        message: '( codigo tem de ser preenchido )'
   validates_presence_of :name,        message: '( nome tem de ser preenchido )'
   validates_presence_of :description, message: '( descrição tem de ser preenchida )'
   validates_presence_of :qtd,         message: '( quantidade tem de ser preenchida )'
+  validates_presence_of :qtd_min,     message: '( quantidade minima tem de ser preenchida )'
 
   validates_numericality_of :qtd,     message: '( quantidade tem de ser numerica )'
+  validates_numericality_of :qtd_min, message: '( quantidade tem de ser numerica )'
   validates_numericality_of :code,    message: '( codigo tem de ser numerica )'
 
   scope :search_by_id, -> (id) { where('id = ?', id) }

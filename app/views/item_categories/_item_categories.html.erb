@@ -1,0 +1,25 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+<%= hidden_field_tag :table_row_position %>
+
+<table class="table table-condensed">
+    <thead id="item_categories_thead">
+    <tr>
+        <th><%= sortable(:sort, :direction, 'created_at','name','Nome', true) %></th>
+        <th colspan="2"></th>
+    </tr>
+    </thead>
+
+    <tbody id="item_categories_tbody">
+    <% @item_categories.each do |item_category| %>
+    <tr>
+        <td><%= item_category.name %></td>
+
+        <td><%= link_to 'Editar', edit_item_category_path(item_category), remote: true, class: 'update_post btn btn-warning' %></td>
+        <td><%= link_to 'Eliminar', item_category, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger' %></td>
+    </tr>
+    <% end %>
+    </tbody>
+</table>
+
+<%= will_paginate @item_categories %>
