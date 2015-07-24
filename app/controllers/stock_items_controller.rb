@@ -12,7 +12,11 @@ class StockItemsController < ApplicationController
     sort      = sort_column(:sort, :created_at)
     direction = sort_direction(:direction)
 
-    @stock_items = StockItem.search(params[:search]).order("#{sort} #{direction}").paginate(:per_page => 15, :page => params[:page])
+    @stock_items = StockItem.search(params[:search])
+                       .joins(:item_category)
+                       .order("#{sort} #{direction}")
+                       .paginate(:per_page => 15, :page => params[:page])
+                       .select('stock_items.*, item_categories.name as cat_name')
   end
 
   def new
@@ -27,6 +31,8 @@ class StockItemsController < ApplicationController
 
     respond_to do |format|
       if @stock_item.save
+        @item_category = ItemCategory.find(@stock_item.item_category_id)
+
         format.js   {}
       else
         generic_form_error_hander(format, 'Erro ao adicionar item', @stock_item.errors.full_messages)
@@ -37,9 +43,11 @@ class StockItemsController < ApplicationController
   def update
     respond_to do |format|
       if @stock_item.update(stock_item_params)
+        @item_category = ItemCategory.find(@stock_item.item_category_id)
+
         format.js   {}
       else
-        generic_form_error_hander(format, 'Erro ao actualizar stock', @stock_item.errors.full_messages)
+        generic_form_error_hander(format, 'Erro ao actualizar item', @stock_item.errors.full_messages)
       end
     end
   end
@@ -58,6 +66,6 @@ class StockItemsController < ApplicationController
     end
 
     def stock_item_params
-      params.require(:stock_item).permit(:code, :name, :description, :qtd)
+      params.require(:stock_item).permit(:code, :name, :description, :qtd, :qtd_min, :item_category_id)
     end
 end

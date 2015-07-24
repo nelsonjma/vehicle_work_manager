@@ -5,6 +5,8 @@ var rowContent = '<tr>' +
         '<td><%= @stock_item.name  %></td>' +
         '<td><%= @stock_item.description  %></td>' +
         '<td><%= @stock_item.qtd  %></td>' +
+        '<td><%= @stock_item.qtd_min  %></td>' +
+        '<td><%= @item_category.name  %></td>' +
         '<td><%= link_to 'Editar', edit_stock_item_path(@stock_item), remote: true, class: 'update_post btn btn-warning' %></td>' +
 
         '<%= content_tag(:td, (link_to 'Eliminar', @stock_item, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger')) if you_are_admin %>' +

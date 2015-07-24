@@ -6,7 +6,7 @@
 
   <div class="row">
     <%= link_to 'Back', vehicles_path, class: 'btn btn-primary' %>
-    <%= link_to 'Nova Obra', new_work_path(params: { vehicle_id: params[:vehicle_id] }), remote: true, class: 'btn btn-primary' %>
+    <%= (link_to 'Nova Obra', new_work_path(params: { vehicle_id: params[:vehicle_id] }), remote: true, class: 'btn btn-primary') if you_are_admin %>
   </div>
 
   <div class="row">

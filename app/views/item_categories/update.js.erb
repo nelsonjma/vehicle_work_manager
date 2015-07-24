@@ -1,0 +1,8 @@
+// close create/edit modal
+$('#addEditModal').modal('hide');
+
+var row_position = $('#table_row_position').val();
+
+var selected_row = $('#item_categories_tbody').find('> tr:eq(' + row_position + ')');
+
+selected_row.find('> td:eq(0)').html("<%= @item_category.name %>");

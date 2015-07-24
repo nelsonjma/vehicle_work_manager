@@ -9,3 +9,5 @@ selected_row.find('> td:eq(0)').html("<%= @stock_item.code %>");
 selected_row.find('> td:eq(1)').html("<%= @stock_item.name %>");
 selected_row.find('> td:eq(2)').html("<%= @stock_item.description %>");
 selected_row.find('> td:eq(3)').html("<%= @stock_item.qtd %>");
+selected_row.find('> td:eq(4)').html("<%= @stock_item.qtd_min %>");
+selected_row.find('> td:eq(5)').html("<%= @item_category.name %>");

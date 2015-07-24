@@ -15,12 +15,18 @@ class TaskItemsController < ApplicationController
   end
 
   def new
-    @stock_items  = StockItem.search(params[:search])
+    @stock_items = StockItem.search(params[:search])
+                       .joins(:item_category)
+                       .select('stock_items.*, item_categories.name as cat_name')
+
     @task_item    = TaskItem.new
   end
 
   def edit
-    @stock_items      = StockItem.search_by_id(params[:search])
+    @stock_items      = StockItem.where('stock_items.id = ?', (params[:search]))
+                            .joins(:item_category)
+                            .select('stock_items.*, item_categories.name as cat_name')
+
     @stock_item_name  = @stock_items.first.name
   end
 

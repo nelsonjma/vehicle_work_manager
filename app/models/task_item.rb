@@ -5,7 +5,7 @@ class TaskItem < ActiveRecord::Base
   belongs_to :stock_item
 
   validates_presence_of :qtd,           message: '( quantidade tem de ser preenchida )'
-  validates_presence_of :note,          message: '( notas tem de ser preenchidas )'
+  #validates_presence_of :note,          message: '( notas tem de ser preenchidas )' # desactivada a pedidos
   validates_presence_of :work_task_id,  message: '( selecione um item )'
 
   validates_numericality_of :qtd,       message: '( quantidade tem de ser numerica )'
