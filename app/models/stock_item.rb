@@ -17,6 +17,13 @@ class StockItem < ActiveRecord::Base
 
   scope :search_by_id, -> (id) { where('id = ?', id) }
 
+  before_save :last_update
+
+  def last_update
+    self.updated_at = Time.now
+  end
+
+
   def self.remove_stock(id, qtd)
     stock_item = StockItem.find(id)
     stock_item.qtd = stock_item.qtd - qtd

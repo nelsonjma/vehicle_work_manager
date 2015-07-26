@@ -6,7 +6,11 @@ class VehicleType < ActiveRecord::Base
 
   before_save :upload_image, prepend: true
 
+  before_save :last_update
 
+  def last_update
+    self.updated_at = Time.now
+  end
 
   def upload_image
     return true if self.upload == nil && self.image != nil

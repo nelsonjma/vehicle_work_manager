@@ -22,7 +22,8 @@ module LayoutOperations
           title = params[:controller]
       end
 
-      link_to title, '#', class: 'navbar-brand'
+      #link_to title, '#', class: 'navbar-brand'
+      link_to 'CA', '#', class: 'navbar-brand'
     end
 
   end

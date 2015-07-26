@@ -13,8 +13,10 @@ class WorksController < ApplicationController
       @works = @vehicle.works.all
     else
       @works = @vehicle.works.not_finished_work
-    end
 
+      # redirecto to tasks if just one work
+      redirect_to work_tasks_url(params: { work_id: @works[0].id, vehicle_id: @vehicle.id, origin: 'from_vehicles' }) if @works.count == 1
+    end
 
   end
 

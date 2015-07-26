@@ -8,4 +8,10 @@ class Vehicle < ActiveRecord::Base
 
   scope :with_work_not_finished, -> { joins(:works).where('finished != ?', true) }
 
+  before_save :last_update
+
+  def last_update
+    self.updated_at = Time.now
+  end
+
 end

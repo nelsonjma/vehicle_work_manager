@@ -16,7 +16,11 @@ Rails.application.routes.draw do
 
   resources :stock_items,           :only => [:index, :new, :edit, :create, :update, :destroy]
 
-  resources :work_tasks,            :only => [:index, :new, :edit, :create, :update, :destroy]
+  resources :work_tasks,            :only => [:index, :new, :edit, :create, :update, :destroy] do
+    member do
+      get :finish
+    end
+  end
 
   resources :task_items,            :only => [:index, :new, :edit, :create, :update, :destroy]
 

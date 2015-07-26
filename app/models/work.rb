@@ -11,4 +11,16 @@ class Work < ActiveRecord::Base
   scope :current_work_tasks, -> (work_id) { joins(:tasks).where('work_id = ?', work_id) }
   scope :not_finished_work, -> { where('finished != ?', true) }
 
+  before_save :last_update, :finished_at_on_save
+
+  def last_update
+    self.updated_at = Time.now
+  end
+
+  def finished_at_on_save
+    if self.finished
+      self.finished_at = Time.now
+    end
+  end
+
 end

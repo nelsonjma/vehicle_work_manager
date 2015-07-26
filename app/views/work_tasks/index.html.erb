@@ -1,11 +1,20 @@
 <%= hidden_field_tag :table_row_position %>
 
-<% you_are_admin = just_for_admin_user %>
+<% is_admin = just_for_admin_user %>
 
 <div class="container">
 
+  <h4>
+    Veiculo
+    <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    Obras
+    <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    <b>Tarefas</b>
+  </h4>
+  <br/>
+
   <div class="row">
-    <%= link_to 'Back', works_path(params: { vehicle_id: params[:vehicle_id] }), class: 'btn btn-primary' %>
+    <%= go_back_link(params[:origin]) %>
     <%= link_to 'Adicionar Tarefa', new_work_task_path(params: { work_id: @work_id }), remote: true, class: 'btn btn-primary' %>
   </div>
 
@@ -17,7 +26,9 @@
         <th>Descrição</th>
         <th>Ut</th>
 
-        <%= tag(:th, colspan: '2') if you_are_admin %>
+        <th>Estado da Tarefa</th>
+        <th></th>
+        <%= tag(:th, colspan: '2') if is_admin %>
 
       </tr>
       </thead>
@@ -29,11 +40,13 @@
             <td><%= work_task.description %></td>
             <td><%= work_task.ut %></td>
 
-            <td><%= link_to 'Items', task_items_path(params: { work_task_id: work_task.id, work_id: @work_id, vehicle_id: params[:vehicle_id] }), class: 'btn btn-info' %></td>
+            <td><%= finished_cell_content(work_task.finished, work_task.finished_at, work_task.id) %></td>
 
-            <%= content_tag(:td, (link_to 'Editar', edit_work_task_path(work_task.id), remote: true, class: 'update_post btn btn-warning')) if you_are_admin %>
-            <%= content_tag(:td, (link_to 'Eliminar', work_task_path(work_task.id), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger')) if you_are_admin %>
+            <%= show_items_button(work_task.id, @work_id, params[:vehicle_id], work_task.finished, params[:origin]) %>
 
+            <%= show_edit_button(is_admin, work_task.id) %>
+
+            <%= show_delete_button(is_admin, is_read_only?(work_task.finished), work_task.id) %>
           </tr>
       <% end %>
       </tbody>

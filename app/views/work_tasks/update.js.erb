@@ -1,3 +1,5 @@
+<% is_admin = just_for_admin_user %>
+
 // close create/edit modal
 $('#addEditModal').modal('hide');
 
@@ -8,3 +10,8 @@ var selected_row = $('#work_task_tbody').find('> tr:eq(' + row_position + ')');
 selected_row.find('> td:eq(0)').html("<%= @task_details.name %>");
 selected_row.find('> td:eq(1)').html("<%= @task_details.description %>");
 selected_row.find('> td:eq(2)').html("<%= @work_task.ut %>");
+
+selected_row.find('> td:eq(3)').html('<%= finished_cell_content(@work_task.finished, @work_task.finished_at, @work_task.id) %>');
+
+
+selected_row.find('> td:eq(6)').html('<%= show_delete_button(is_admin, is_read_only?(@work_task.finished), @work_task.id, false) %>');

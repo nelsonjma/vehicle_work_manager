@@ -1,14 +1,20 @@
-<% you_are_admin = just_for_admin_user %>
+<% is_admin     = just_for_admin_user %>
+<%= origin      = params[:origin] %>
+<%= vehicle_id  = params[:vehicle_id] %>
 
 var rowContent = '<tr>' +
         '<td><%= @task_details.name %></td>' +
         '<td><%= @task_details.description %></td>' +
         '<td><%= @work_task.ut %></td>' +
 
-        '<td><%= link_to 'Items', task_items_path(params: { work_task_id: @work_task.id, work_id: @work_task.work_id, vehicle_id: @vehicle_id }), class: 'btn btn-info' %></td>' +
+        '<td><%= finished_cell_content(@work_task.finished, @work_task.finished_at, @work_task.id) %></td>' +
 
-        '<%= content_tag(:td, (link_to 'Editar', edit_work_task_path(@work_task.id), remote: true, class: 'update_post btn btn-warning')) if you_are_admin %>' +
-        '<%= content_tag(:td, (link_to 'Eliminar', work_task_path(@work_task.id), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger')) if you_are_admin %>' +
+        // o read_only is false because is a new item
+        '<%= show_items_button(@work_task.id, @work_task.work_id, vehicle_id, origin, false) %>' +
+
+        '<%= show_edit_button(is_admin, @work_task.id) %>' +
+
+        '<%= show_delete_button(is_admin, false, @work_task.id) %>' +
 
         '</tr>';
 

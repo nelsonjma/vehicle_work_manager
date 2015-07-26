@@ -1,0 +1,24 @@
+<% is_admin = just_for_admin_user %>
+
+$('.finish_post').bind('ajax:success', function() {
+    var selected_row = $(this).closest('tr');
+
+    selected_row.find('> td:eq(3)').html('<%= finished_cell_content(@work_task.finished, @work_task.finished_at, @work_task.id) %>');
+
+    selected_row.find('> td:eq(6)').html('<%= show_delete_button(is_admin, is_read_only?(@work_task.finished), @work_task.id, false) %>');
+
+
+
+    var items = selected_row.find('> td:eq(4) > a');
+
+    var currentUrl = $(items).attr('href');
+
+    // http://localhost:3000/task_items?read_only=true&vehicle_id=3&work_id=15&work_task_id=13
+    if (currentUrl.indexOf('read_only=false') != -1 ) {
+        currentUrl = currentUrl.replace('read_only=false', 'read_only=true');
+    } else {
+        currentUrl += "&read_only=true";
+    }
+
+    $(items).attr('href', currentUrl);
+});
