@@ -1,0 +1,14 @@
+var rowContent = '<tr>' +
+        '<td><%= @user.name  %></td>' +
+        '<td><%= user_permission_name(@user.permission)  %></td>' +
+        '<td><%= @user.active ? 'activo' : 'inactivo'  %></td>' +
+
+        '<td><%= link_to 'Editar', edit_user_path(@user), remote: true, class: 'update_post btn btn-warning' %></td>' +
+        '<td><%= link_to 'Eliminar', @user, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger' %></td>' +
+
+        '</tr>';
+
+insertRowAfter('users_tbody', rowContent);
+
+// close create/edit modal
+$('#addEditModal').modal('hide');

@@ -1,0 +1,10 @@
+// close create/edit modal
+$('#addEditModal').modal('hide');
+
+var row_position = $('#table_row_position').val();
+
+var selected_row = $('#users_tbody').find('> tr:eq(' + row_position + ')');
+
+selected_row.find('> td:eq(0)').html("<%= @user.name %>");
+selected_row.find('> td:eq(1)').html("<%= user_permission_name(@user.permission) %>");
+selected_row.find('> td:eq(2)').html("<%= @user.active ? 'activo' : 'inactivo' %>");

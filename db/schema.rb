@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150725231304) do
+ActiveRecord::Schema.define(version: 20150726193147) do
 
   create_table "item_categories", force: :cascade do |t|
     t.string   "name"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20150725231304) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "permission"
+    t.boolean  "active"
   end
 
   create_table "vehicle_types", force: :cascade do |t|

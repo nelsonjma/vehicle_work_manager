@@ -1,0 +1,32 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+<%= hidden_field_tag :table_row_position %>
+
+<table class="table table-condensed">
+  <thead id="users_thead">
+  <tr>
+    <th><%= sortable(:sort, :direction, 'name','name','Name', true) %></th>
+    <th><%= sortable(:sort, :direction, 'name','permission','Permissões', true) %></th>
+    <th><%= sortable(:sort, :direction, 'name','active','Activo?', true) %></th>
+
+    <th colspan="2"></th>
+
+  </tr>
+  </thead>
+
+  <tbody id="users_tbody">
+  <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user_permission_name(user.permission)  %></td>
+        <td><%= user.active ? 'activo' : 'inactivo' %></td>
+
+        <td><%= link_to 'Editar', edit_user_path(user), remote: true, class: 'update_post btn btn-warning' %></td>
+        <td><%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger' %></td>
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate @users %>

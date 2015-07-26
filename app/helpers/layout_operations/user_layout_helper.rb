@@ -10,6 +10,7 @@ module LayoutOperations
                                   }, class: 'dropdown-toggle', :data => { :toggle => 'dropdown' }, :aria => { haspopup: true, expanded: false }, :role => 'button', :href => '#')
 
       links = content_tag(:ul, capture {
+                               concat content_tag(:li, (link_to 'Utilizadores', '/users'))
                                concat content_tag(:li, (link_to 'Relatorios', '#'))
                                concat content_tag(:li, (link_to 'Tipos de Veiculos', '/vehicle_types'))
                                concat content_tag(:li, (link_to 'Stock', '/stock_items'))

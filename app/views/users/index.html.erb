@@ -1,15 +1,15 @@
 <div class="container">
 
-  <h4>Stock</h4>
+  <h4>Utilizadores</h4>
   <br/>
 
   <div class="row">
-      <%= link_to 'Novo Item', new_stock_item_path, remote: true, class: 'btn btn-primary' %>
-    </div>
+    <%= link_to 'Novo Utilizador', new_user_path, remote: true, class: 'btn btn-primary' %>
+  </div>
 
-    <br/>
+  <br/>
 
-    <%= form_tag stock_items_path, :method => 'get', :id => 'stock_items_search' do %>
+  <%= form_tag users_path, :method => 'get', :id => 'users_search' do %>
 
       <div class="input-group col-sm-4">
         <%= text_field_tag :search, params[:search], class: 'form-control' %>
@@ -18,8 +18,8 @@
         </span>
       </div>
 
-      <div id="stock_items" class="row"><%= render 'stock_items' %></div>
-    <% end %>
+      <div id="users" class="row"><%= render 'users' %></div>
+  <% end %>
 </div>
 
 <% content_for :head do %>

@@ -28,4 +28,6 @@ Rails.application.routes.draw do
 
   resources :item_categories,       :only => [:index, :new, :edit, :create, :update, :destroy]
 
+  resources :users,                 :only => [:index, :new, :edit, :create, :update, :destroy]
+
 end
