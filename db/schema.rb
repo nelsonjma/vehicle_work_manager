@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150726193147) do
+ActiveRecord::Schema.define(version: 20150804231615) do
 
   create_table "item_categories", force: :cascade do |t|
     t.string   "name"
@@ -24,10 +24,11 @@ ActiveRecord::Schema.define(version: 20150726193147) do
     t.string   "name"
     t.text     "description"
     t.integer  "qtd"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "qtd_min"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "qtd_min",          default: 0
     t.integer  "item_category_id"
+    t.float    "price",            default: 0.0
   end
 
   create_table "task_items", force: :cascade do |t|

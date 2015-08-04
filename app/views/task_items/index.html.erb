@@ -25,6 +25,9 @@
 
         <th>Codigo</th>
         <th>Qtd</th>
+
+        <%= content_tag(:th, 'Custo') if you_are_admin %>
+
         <th>Descrição</th>
         <th>Responsável</th>
         <th>Observações</th>
@@ -39,6 +42,9 @@
           <tr>
             <td><%= task_item.code %></td>
             <td><%= task_item.qtd %></td>
+
+            <%= content_tag(:td, "#{task_item.qtd * task_item.price} €") if you_are_admin %>
+
             <td><%= task_item.item_name %></td>
             <td><%= task_item.user_name %></td>
             <td><%= task_item.note %></td>

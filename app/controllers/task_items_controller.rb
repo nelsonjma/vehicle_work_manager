@@ -11,7 +11,7 @@ class TaskItemsController < ApplicationController
     @task_items = TaskItem.current_work_task_items(@work_task_id)
                       .select('task_items.id, task_items.stock_item_id,
                               task_items.note, task_items.qtd, users.name as user_name,
-                              stock_items.code, stock_items.name as item_name')
+                              stock_items.code, stock_items.name as item_name, stock_items.price')
   end
 
   def new

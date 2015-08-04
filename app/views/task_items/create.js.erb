@@ -3,6 +3,7 @@
 var rowContent = '<tr>' +
         '<td><%= @stock_item.code  %></td>' +
         '<td><%= @task_item.qtd  %></td>' +
+        <%= content_tag(:td, "#{@task_item.qtd * @stock_item.price} €" ) if you_are_admin %>
         '<td><%= @stock_item.name  %></td>' +
         '<td><%= current_user_name  %></td>' +
         '<td><%= @task_item.note  %></td>' +

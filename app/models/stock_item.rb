@@ -17,10 +17,16 @@ class StockItem < ActiveRecord::Base
 
   scope :search_by_id, -> (id) { where('id = ?', id) }
 
-  before_save :last_update
+  before_save :last_update #, :check_if_price_is_int
 
   def last_update
     self.updated_at = Time.now
+  end
+
+  def check_if_price_is_int
+    if self.price.eql? self.price.to_i
+      self.price = self.price.to_f
+    end
   end
 
 

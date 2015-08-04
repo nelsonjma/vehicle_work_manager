@@ -66,6 +66,6 @@ class StockItemsController < ApplicationController
     end
 
     def stock_item_params
-      params.require(:stock_item).permit(:code, :name, :description, :qtd, :qtd_min, :item_category_id)
+      params.require(:stock_item).permit(:code, :name, :description, :qtd, :qtd_min, :item_category_id, :price)
     end
 end
