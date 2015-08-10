@@ -27,8 +27,9 @@
       <column name="qtd" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
       <column name="created_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <column name="updated_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
-      <column name="qtd_min" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="qtd_min" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4" def="MA=="/>
       <column name="item_category_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="price" sqlType="FLOAT" precision="2000000000" scale="10" nullable="true" jdbcType="6" def="MC4w"/>
       <primary-key columns="id"/>
     </table>
     <table name="task_items" schema="" catalog="" type="TABLE">

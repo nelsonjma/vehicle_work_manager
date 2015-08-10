@@ -1,0 +1,19 @@
+<%= hidden_field_tag :table_row_position %>
+
+<% you_are_admin = just_for_admin_user %>
+
+<div class="container">
+
+  <h4>
+    <b>Obras</b>
+  </h4>
+
+  <br/>
+
+  <div class="row">
+    <%= (link_to 'Nova Obra', new_simple_jobs_work_path, remote: true, class: 'btn btn-primary') if you_are_admin %>
+  </div>
+
+
+
+</div>

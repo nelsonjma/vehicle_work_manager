@@ -1,6 +1,7 @@
 class StockItem < ActiveRecord::Base
 
   has_many :task_items
+  has_many :simple_task_items
 
   belongs_to :item_category
 
