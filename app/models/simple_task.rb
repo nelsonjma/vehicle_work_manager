@@ -7,6 +7,8 @@ class SimpleTask < ActiveRecord::Base
   validates_presence_of :name,        message: '( nome tem de ser preenchido )'
   validates_presence_of :description, message: '( descrição tem de ser preenchida )'
 
+  scope :current_work_tasks, -> (work_id) { where('simple_work_id = ?', work_id) }
+
   before_save :last_update, :finished_at_on_save
 
   def last_update

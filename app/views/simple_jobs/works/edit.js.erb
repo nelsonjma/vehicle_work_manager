@@ -1,0 +1,9 @@
+$('.update_post').bind('ajax:success', function() {
+    var position = $(this).closest('tr').index();
+    $('#table_row_position').val(position);
+});
+
+$('#add_edit_body').html("<%= escape_javascript render(file: 'simple_jobs/works/edit.html.erb') %>");
+$('#add_edit_title').html("Editar Obra")
+
+$('#addEditModal').modal('show');

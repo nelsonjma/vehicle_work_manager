@@ -1,0 +1,12 @@
+// close create/edit modal
+$('#addEditModal').modal('hide');
+
+var row_position = $('#table_row_position').val();
+
+var selected_row = $('#simple_work_tbody').find('> tr:eq(' + row_position + ')');
+
+selected_row.find('> td:eq(0)').html("<%= @work.description %>");
+selected_row.find('> td:eq(1)').html("<%= @work.notes %>");
+selected_row.find('> td:eq(2)').html("<%= @work.finished ? 'sim' : 'não' %>");
+selected_row.find('> td:eq(3)').html("<%= @work.created_at.strftime('%Y-%m-%d') %>");
+selected_row.find('> td:eq(4)').html("<%= @work.finished ? @work.finished_at.strftime('%Y-%m-%d') : '' %>");

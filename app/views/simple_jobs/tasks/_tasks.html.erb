@@ -1,0 +1,49 @@
+<%= hidden_field_tag :table_row_position %>
+
+<% you_are_admin = just_for_admin_user %>
+
+<div class="container">
+
+  <h4>
+    Obras
+    <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+    <b>Tarefas</b>
+  </h4>
+
+  <div class="row">
+    <%= link_to 'Back', simple_jobs_work_path, class: 'btn btn-primary' %>
+    <%= link_to 'Adicionar Tarefa', new_simple_jobs_task_path(params: { work_id: @work_id }), remote: true, class: 'btn btn-primary' %>
+  </div>
+
+  <div class="row">
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Descrição</th>
+
+          <th>Estado da Tarefa</th>
+          <th></th> <!-- items click column -->
+          <%= tag(:th, colspan: '2') if you_are_admin %>
+        </tr>
+      </thead>
+      <tbody id="simple_task_tbody">
+      <% @tasks.each do |task| %>
+        <tr>
+          <td><%= task.name %></td>
+          <td><%= task.description %></td>
+
+          <td></td>
+
+          <td>items</td>
+          <td>edit</td>
+          <td>delete</td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+    
+
+  </div>
+
+</div>
