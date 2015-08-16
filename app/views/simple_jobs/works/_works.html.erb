@@ -11,7 +11,8 @@
   <br/>
 
   <div class="row">
-    <%= (link_to 'Nova Obra', new_simple_jobs_work_path, remote: true, class: 'btn btn-primary') if you_are_admin %>
+    <% (link_to 'Nova Obra', new_simple_jobs_work_path, remote: true, class: 'btn btn-primary') if you_are_admin %>
+    <%= link_to 'Nova Obra', new_simple_jobs_work_path, remote: true, class: 'btn btn-primary' %>
   </div>
 
   <div class="row">

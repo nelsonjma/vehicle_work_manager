@@ -11,12 +11,14 @@ class VehiclesController < ApplicationController
     if just_for_admin_user
       @vehicles = Vehicle
                       .joins(:vehicle_type)
-                      .select('vehicles.id, vehicles.description, vehicle_types.name, vehicle_types.image')
+                      .select('vehicles.id, vehicles.description, vehicle_types.name, vehicle_types.image,
+                        vehicles.marca, vehicles.matricula, vehicles.corporacao')
     else
       @vehicles       = Vehicle
                             .with_work_not_finished
                             .joins(:vehicle_type)
-                            .select('vehicles.id, vehicles.description, vehicle_types.name, vehicle_types.image')
+                            .select('vehicles.id, vehicles.description, vehicle_types.name, vehicle_types.image,
+                              vehicles.marca, vehicles.matricula, vehicles.corporacao')
     end
 
   end
@@ -73,7 +75,7 @@ class VehiclesController < ApplicationController
     end
 
     def vehicle_params
-      params.require(:vehicle).permit(:description, :vehicle_type_id)
+      params.require(:vehicle).permit(:description, :vehicle_type_id, :marca, :matricula, :corporacao)
     end
 
 end

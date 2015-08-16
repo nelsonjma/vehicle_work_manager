@@ -2,6 +2,11 @@
 
 rowContent = '<tr>' +
         '<td><%= link_to (image_tag @vehicle_details.image), works_path(params: { vehicle_id: @vehicle.id.to_s }) %></td>' +
+
+        '<td><%= @vehicle.marca %></td>' +
+        '<td><%= @vehicle.matricula %></td>' +
+        '<td><%= @vehicle.corporacao %></td>' +
+
         '<td><%= @vehicle_details.name %></td>' +
         '<td><%= @vehicle.description %></td>' +
 

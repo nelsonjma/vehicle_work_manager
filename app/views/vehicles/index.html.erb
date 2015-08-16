@@ -16,6 +16,9 @@
       <thead>
       <tr>
         <th></th>
+        <th>Marca</th>
+        <th>Matricula</th>
+        <th>Corporação</th>
         <th>Tipo</th>
         <th>Descrição</th>
 
@@ -27,6 +30,10 @@
       <% @vehicles.each do | vehicle | %>
           <tr>
             <td><%= link_to image_tag(vehicle['image']), works_path(params: { vehicle_id: vehicle.id }) %></td>
+
+            <td><%= vehicle.marca %></td>
+            <td><%= vehicle.matricula %></td>
+            <td><%= vehicle.corporacao %></td>
 
             <td><%= vehicle.name %></td>
             <td><%= vehicle.description %></td>

@@ -14,7 +14,7 @@
 
   <div class="row">
     <%= link_to 'Back', simple_jobs_works_path, class: 'btn btn-primary' %>
-    <%= link_to 'Adicionar Tarefa', new_simple_jobs_task_path(params: { work_id: @work_id }), remote: true, class: 'btn btn-primary' %>
+    <%= link_to 'Adicionar Tarefa', new_simple_jobs_task_path(params: { work_id: params[:work_id] }), remote: true, class: 'btn btn-primary' %>
   </div>
 
   <div class="row">

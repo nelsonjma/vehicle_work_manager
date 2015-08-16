@@ -12,5 +12,9 @@ var linkImg = $(link).find('img').first();
 $(link).attr('href', '<%= works_path(params: { vehicle_id: @vehicle.id.to_s }) %>');
 $(linkImg).attr('src', '<%= @vehicle_details.image %>');
 
-selected_row.find('> td:eq(1)').html("<%= @vehicle_details.name %>");
-selected_row.find('> td:eq(2)').html("<%= @vehicle.description %>");
+selected_row.find('> td:eq(1)').html("<%= @vehicle.marca %>");
+selected_row.find('> td:eq(2)').html("<%= @vehicle.matricula %>");
+selected_row.find('> td:eq(3)').html("<%= @vehicle.corporacao %>");
+
+selected_row.find('> td:eq(4)').html("<%= @vehicle_details.name %>");
+selected_row.find('> td:eq(5)').html("<%= @vehicle.description %>");
