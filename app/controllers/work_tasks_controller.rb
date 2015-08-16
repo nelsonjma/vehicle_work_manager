@@ -73,6 +73,7 @@ class WorkTasksController < ApplicationController
   end
 
   private
+
   def set_work_task
     @work_task = WorkTask.find(params[:id])
   end

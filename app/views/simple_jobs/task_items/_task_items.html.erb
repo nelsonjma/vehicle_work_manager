@@ -6,7 +6,6 @@
 <div class="container">
 
   <h4>
-    Veiculo<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
     Obras<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
     Tarefas<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
     <b>Itens</b>
@@ -15,8 +14,8 @@
   <br/>
 
   <div class="row">
-    <%= link_to 'Back', work_tasks_path(params: { work_id: params[:work_id], vehicle_id: params[:vehicle_id], origin: params[:origin] }), class: 'btn btn-primary' %>
-    <%= (link_to 'Adicionar item do stock', new_task_item_path(params: {work_task_id: @work_task_id}), remote: true, class: 'btn btn-primary') unless read_only %>
+    <%= link_to 'Back', simple_jobs_tasks_path(params: { work_id: params[:work_id], task_id: params[:task_id] }), class: 'btn btn-primary' %>
+    <%= (link_to 'Adicionar item do stock', new_simple_jobs_task_item_path(params: { task_id: @task_id}), remote: true, class: 'btn btn-primary') unless read_only %>
   </div>
 
   <div class="row">
@@ -38,7 +37,7 @@
       </tr>
       </thead>
 
-      <tbody id="task_item_tbody">
+      <tbody id="simple_task_item_tbody">
       <% @task_items.each do |task_item| %>
           <tr>
             <td><%= task_item.code %></td>
@@ -50,8 +49,8 @@
             <td><%= task_item.user_name %></td>
             <td><%= task_item.note %></td>
 
-            <%= content_tag(:td, (link_to 'Editar', edit_task_item_path(task_item, params: { search: task_item.stock_item_id }), remote: true, class: 'update_post btn btn-warning')) if you_are_admin && !read_only %>
-            <%= content_tag(:td, (link_to 'Eliminar', task_item_path(task_item), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger')) if you_are_admin && !read_only %>
+            <%= content_tag(:td, (link_to 'Editar', edit_simple_jobs_task_item_path(task_item, params: { search: task_item.stock_item_id }), remote: true, class: 'update_post btn btn-warning')) if you_are_admin && !read_only %>
+            <%= content_tag(:td, (link_to 'Eliminar', simple_jobs_task_item_path(task_item), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger')) if you_are_admin && !read_only %>
 
           </tr>
       <% end %>
@@ -60,4 +59,3 @@
   </div>
 
 </div>
-

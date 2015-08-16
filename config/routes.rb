@@ -32,7 +32,11 @@ Rails.application.routes.draw do
 
   namespace :simple_jobs do
     resources :task_items,          :only => [:index, :new, :edit, :create, :update, :destroy]
-    resources :tasks,               :only => [:index, :new, :edit, :create, :update, :destroy]
+    resources :tasks,               :only => [:index, :new, :edit, :create, :update, :destroy] do
+      member do
+        get :finish
+      end
+    end
     resources :works,               :only => [:index, :new, :edit, :create, :update, :destroy]
   end
 

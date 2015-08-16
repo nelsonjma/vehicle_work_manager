@@ -7,14 +7,14 @@ var rowContent = '<tr>' +
         '<td><%= @task_details.description %></td>' +
         '<td><%= @work_task.ut %></td>' +
 
-        '<td><%= finished_cell_content(@work_task.finished, @work_task.finished_at, @work_task.id) %></td>' +
+        '<td><%= work_tasks_finished_cell(@work_task.finished, @work_task.finished_at, @work_task.id) %></td>' +
 
         // o read_only is false because is a new item
-        '<%= show_items_button(@work_task.id, @work_task.work_id, vehicle_id, origin, false) %>' +
+        '<%= work_tasks_items_button(@work_task.id, @work_task.work_id, vehicle_id, origin, false) %>' +
 
-        '<%= show_edit_button(is_admin, @work_task.id) %>' +
+        '<%= work_tasks_edit_button(is_admin, @work_task.id) %>' +
 
-        '<%= show_delete_button(is_admin, false, @work_task.id) %>' +
+        '<%= work_tasks_delete_button(is_admin, false, @work_task.id) %>' +
 
         '</tr>';
 

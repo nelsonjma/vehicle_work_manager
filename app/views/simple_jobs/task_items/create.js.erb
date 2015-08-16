@@ -1,0 +1,18 @@
+<% you_are_admin = just_for_admin_user %>
+
+var rowContent = '<tr>' +
+        '<td><%= @stock_item.code  %></td>' +
+        '<td><%= @task_item.qtd  %></td>' +
+        '<%= content_tag(:td, "#{@task_item.qtd * @stock_item.price} €" ) if you_are_admin %>' +
+        '<td><%= @stock_item.name  %></td>' +
+        '<td><%= current_user_name  %></td>' +
+        '<td><%= @task_item.note  %></td>' +
+
+        '<%= content_tag(:td, (link_to 'Editar', edit_simple_jobs_task_item_path(@task_item, params: { search: @task_item.stock_item_id }), remote: true, class: 'update_post btn btn-warning')) if you_are_admin %>' +
+        '<%= content_tag(:td, (link_to 'Eliminar', simple_jobs_task_item_path(@task_item), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger')) if you_are_admin %>' +
+        '</tr>';
+
+insertRowAfter('simple_task_item_tbody', rowContent);
+
+// close create/edit modal
+$('#addEditModal').modal('hide');

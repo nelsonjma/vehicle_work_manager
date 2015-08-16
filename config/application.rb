@@ -22,5 +22,10 @@ module VehicleWorkManager
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # helpers that had the same name with the controllers were only
+    # available in their corresponding controller and views
+    #config.action_controller.include_all_helpers = false
+
   end
 end

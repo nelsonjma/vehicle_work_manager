@@ -1,23 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07f3b433-cb85-45e8-911b-8fde9dbc85d9" name="Default" comment="&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/tasks/_tasks.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/works/create.js.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/works/destroy.js.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/works/edit.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/works/edit.js.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/tasks/index.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/works/update.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/simple_jobs/works/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/simple_jobs/works/_form.html.erb" />
+    <list default="true" id="07f3b433-cb85-45e8-911b-8fde9dbc85d9" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/task_items/_form.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/tasks/_form.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/task_items/_stock_items_selector.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/task_items/_task_items.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/task_items/create.js.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/tasks/create.js.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/task_items/destroy.js.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/tasks/destroy.js.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/task_items/edit.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/tasks/edit.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/task_items/edit.js.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/tasks/edit.js.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/tasks/finish.js.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/task_items/index.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/task_items/new.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/tasks/new.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/task_items/new.js.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/tasks/new.js.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/simple_jobs/tasks_helper.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/task_items/update.js.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/simple_jobs/tasks/update.js.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/simple_jobs/tasks/_tasks.html.erb" afterPath="$PROJECT_DIR$/app/views/simple_jobs/tasks/_tasks.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/simple_jobs/works/_works.html.erb" afterPath="$PROJECT_DIR$/app/views/simple_jobs/works/_works.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/simple_jobs/works/index.html.erb" afterPath="$PROJECT_DIR$/app/views/simple_jobs/works/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/works/index.html.erb" afterPath="$PROJECT_DIR$/app/views/works/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/simple_jobs/works/new.html.erb" afterPath="$PROJECT_DIR$/app/views/simple_jobs/works/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/simple_jobs/works/new.js.erb" afterPath="$PROJECT_DIR$/app/views/simple_jobs/works/new.js.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/application.rb" afterPath="$PROJECT_DIR$/config/application.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/simple_jobs/works/create.js.erb" afterPath="$PROJECT_DIR$/app/views/simple_jobs/works/create.js.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/task_items/create.js.erb" afterPath="$PROJECT_DIR$/app/views/task_items/create.js.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/work_tasks/create.js.erb" afterPath="$PROJECT_DIR$/app/views/work_tasks/create.js.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/work_tasks/finish.js.erb" afterPath="$PROJECT_DIR$/app/views/work_tasks/finish.js.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/task_items/index.html.erb" afterPath="$PROJECT_DIR$/app/views/task_items/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/work_tasks/index.html.erb" afterPath="$PROJECT_DIR$/app/views/work_tasks/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/simple_task.rb" afterPath="$PROJECT_DIR$/app/models/simple_task.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/simple_task_item.rb" afterPath="$PROJECT_DIR$/app/models/simple_task_item.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/task_items_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/task_items_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/simple_jobs/task_items_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/simple_jobs/task_items_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/simple_jobs/tasks_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/simple_jobs/tasks_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/simple_jobs/works_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/simple_jobs/works_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/work_tasks/update.js.erb" afterPath="$PROJECT_DIR$/app/views/work_tasks/update.js.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/work_tasks_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/work_tasks_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/work_tasks_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/work_tasks_helper.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="vehicle_work_manager.iws" />
@@ -35,7 +60,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/vehicle_work_manager@Development__vehicle_work_manager.coverage" NAME="Development: vehicle_work_manager Coverage Results" MODIFIED="1439592475708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="vehicle_work_manager" />
+    <SUITE FILE_PATH="coverage/vehicle_work_manager@Development__vehicle_work_manager.coverage" NAME="Development: vehicle_work_manager Coverage Results" MODIFIED="1439660468021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="vehicle_work_manager" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -78,42 +103,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/users/_users.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/users/update.js.erb" />
-        <option value="$PROJECT_DIR$/app/views/users/create.js.erb" />
-        <option value="$PROJECT_DIR$/app/views/users/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/vehicle_types/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/stock_items/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/item_categories/index.html.erb" />
-        <option value="$PROJECT_DIR$/db/migrate/20150804225429_add_c_price_to_stock_items.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20150804230042_change_stock_items_price_to_float.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/task_items_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/task_items/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/stock_items/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/stock_items/_stock_items.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/stock_items_controller.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20150804231615_change_stock_items_min_qtd_to_add_default.rb" />
-        <option value="$PROJECT_DIR$/app/views/stock_items/update.js.erb" />
-        <option value="$PROJECT_DIR$/app/views/stock_items/create.js.erb" />
-        <option value="$PROJECT_DIR$/app/views/task_items/create.js.erb" />
-        <option value="$PROJECT_DIR$/app/views/task_items/update.js.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/works_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/other_works_controller.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20150809175902_create_simple_works.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20150809180019_create_simple_tasks.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20150809230935_create_simple_task_items.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20150809232205_create_simple_works.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20150809232303_create_simple_tasks.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20150809232335_create_simple_task_items.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/simple_jobs/task_items_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/user.rb" />
-        <option value="$PROJECT_DIR$/app/models/stock_item.rb" />
-        <option value="$PROJECT_DIR$/app/models/simple_work.rb" />
-        <option value="$PROJECT_DIR$/app/models/simple_task_item.rb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/helpers/layout_operations/user_layout_helper.rb" />
-        <option value="$PROJECT_DIR$/app/views/simple_jobs/works/new.js.erb" />
-        <option value="$PROJECT_DIR$/app/views/simple_jobs/works/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/works/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/simple_jobs/works/edit.js.erb" />
         <option value="$PROJECT_DIR$/app/views/simple_jobs/works/update.js.erb" />
@@ -122,13 +111,49 @@
         <option value="$PROJECT_DIR$/app/views/simple_jobs/works/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/simple_jobs/works/destroy.js.erb" />
         <option value="$PROJECT_DIR$/app/controllers/simple_jobs/works_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/simple_jobs/works/_works.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/simple_task.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/simple_jobs/tasks_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/simple_jobs/tasks/index.js.erb" />
         <option value="$PROJECT_DIR$/app/views/simple_jobs/tasks/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/tasks/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/tasks/new.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/tasks/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/helpers/layout_operations/user_layout_helper.rb" />
+        <option value="$PROJECT_DIR$/app/views/work_tasks/index.html.erb" />
+        <option value="$PROJECT_DIR$/config/application.rb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/tasks/edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/tasks/edit.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/work_tasks/update.js.erb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/views/work_tasks/finish.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/tasks/finish.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/tasks/update.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/tasks/destroy.js.erb" />
+        <option value="$PROJECT_DIR$/app/models/simple_task.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/work_tasks_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/works/_works.html.erb" />
         <option value="$PROJECT_DIR$/app/views/simple_jobs/works/create.js.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/simple_jobs/tasks_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/task_items_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/simple_task_item.rb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/task_items/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/task_items/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/helpers/work_tasks_helper.rb" />
+        <option value="$PROJECT_DIR$/app/helpers/simple_jobs/tasks_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/simple_jobs/tasks/_tasks.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/tasks/create.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/task_items/_task_items.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/task_items/new.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/task_items/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/task_items/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/task_items/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/task_items/_stock_items_selector.js" />
+        <option value="$PROJECT_DIR$/app/views/task_items/create.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/task_items/create.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/task_items/edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/task_items/edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/task_items/edit.js.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/simple_jobs/task_items_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/task_items/update.js.erb" />
+        <option value="$PROJECT_DIR$/app/views/simple_jobs/task_items/destroy.js.erb" />
       </list>
     </option>
   </component>
@@ -189,6 +214,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="RailsProjectView" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -209,9 +237,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -572,7 +597,13 @@
       <option name="project" value="LOCAL" />
       <updated>1438731024036</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="simple_jobs&#10;  works - done&#10;  tasks - started">
+      <created>1439601817122</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1439601817122</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView">
@@ -588,18 +619,18 @@
     <frame x="0" y="0" width="1366" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25981873" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37009063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32828283" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42808798" sideWeight="0.5106496" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41284403" sideWeight="0.51888216" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16453674" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32415903" sideWeight="0.49041533" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4296636" sideWeight="0.48935038" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4296636" sideWeight="0.48935038" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44646466" sideWeight="0.49574015" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4278169" sideWeight="0.4797657" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41284403" sideWeight="0.4811178" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869565" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -663,341 +694,31 @@
     <MESSAGE value="Correcções:&#10;&#10;Os titulos tem de passar para as paginas&#10;&#10;Adicionar a possibilidade na tarefa do user poder fechar a tarefa&#10;&#10;Se existir só uma obra em aberto salta directamente do veiculo para a obra&#10;&#10;Colocar a data de criação e  data de terminada na obra." />
     <MESSAGE value="Adicionada tab dos utilizadores.&#10;&#10;" />
     <MESSAGE value="Adicionado o preço ao stock, o custo aos items da tarefa e as respectivas permissões de utilizador.&#10;&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adicionado o preço ao stock, o custo aos items da tarefa e as respectivas permissões de utilizador.&#10;&#10;" />
+    <MESSAGE value="simple_jobs&#10;  works - done&#10;  tasks - started" />
+    <option name="LAST_COMMIT_MESSAGE" value="simple_jobs&#10;  works - done&#10;  tasks - started" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="104" />
+      <option name="time" value="137" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20150615222722_create_task_items.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20150615222435_create_work_tasks.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20150809232303_create_simple_tasks.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20150809232335_create_simple_task_items.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25218913">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20150809232205_create_simple_works.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28371277">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/simple_jobs/task_items_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/stock_item.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09457093">
-          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/task.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12609456">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/task_item.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="18" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/simple_task_item.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3782837">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/simple_work.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18914185">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6935201">
-          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/layout_operations/user_layout_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.882662">
-          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33274958">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/layout_operations/generic_layout_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.8933824">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07446808">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/works/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13407822">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/works/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/works/new.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="17" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/works/create.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/works/edit.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/works/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.035019454">
-          <caret line="1" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/works/edit.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17509727">
-          <caret line="5" column="79" selection-start-line="5" selection-start-column="79" selection-end-line="5" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/works/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.035019454">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/works/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.15564202">
-          <caret line="5" column="47" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/works_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="60" selection-end-column="7" />
-          <folding>
-            <element signature="e#244#571#0" expanded="false" />
-            <element signature="e#259#564#2" expanded="false" />
-            <element signature="e#623#637#0" expanded="false" />
-            <element signature="e#754#756#0" expanded="false" />
-            <element signature="e#1237#1241#0" expanded="false" />
-            <element signature="e#1405#1480#0" expanded="false" />
-            <element signature="e#1484#1537#0" expanded="false" />
-            <element signature="e#1541#1641#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/works/destroy.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/works/destroy.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07003891">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/works/update.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.105058365">
-          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/works/update.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69201523">
-          <caret line="11" column="18" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/works/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1026616">
-          <caret line="60" column="6" selection-start-line="60" selection-start-column="6" selection-end-line="60" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/tasks_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/task_items_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/simple_task.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.114832535">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/work_tasks/edit.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/work_tasks/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/work_tasks/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/work_tasks_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6555024">
-          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/simple_jobs/works_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-          <folding>
-            <element signature="e#439#705#0" expanded="false" />
-            <element signature="e#711#954#0" expanded="false" />
-            <element signature="e#960#1252#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/work.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31578946">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="63" />
+        <state vertical-scroll-proportion="-11.222222">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1005,7 +726,82 @@
     <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/works/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="39" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/works/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19">
+          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/works/update.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/works/create.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/works/_works.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/simple_jobs/works_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20095694">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="46" />
+          <folding>
+            <element signature="e#216#361#0" expanded="false" />
+            <element signature="e#232#353#2" expanded="false" />
+            <element signature="e#367#411#0" expanded="false" />
+            <element signature="e#417#433#0" expanded="false" />
+            <element signature="e#439#705#0" expanded="false" />
+            <element signature="e#510#697#0" expanded="false" />
+            <element signature="e#530#687#1" expanded="false" />
+            <element signature="e#566#568#0" expanded="false" />
+            <element signature="e#711#954#0" expanded="false" />
+            <element signature="e#739#946#0" expanded="false" />
+            <element signature="e#759#936#1" expanded="false" />
+            <element signature="e#810#812#0" expanded="false" />
+            <element signature="e#960#1252#0" expanded="false" />
+            <element signature="e#989#1244#0" expanded="false" />
+            <element signature="e#1009#1234#1" expanded="false" />
+            <element signature="e#1089#1093#0" expanded="false" />
+            <element signature="e#1271#1334#0" expanded="false" />
+            <element signature="e#1340#1438#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/task_item.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6969697">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/simple_task_item.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22966507">
+          <caret line="8" column="114" selection-start-line="8" selection-start-column="114" selection-end-line="8" selection-end-column="114" />
           <folding />
         </state>
       </provider>
@@ -1013,20 +809,71 @@
     <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/tasks/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/simple_jobs/tasks_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/task_items/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.06666667">
+          <caret line="49" column="47" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/work_tasks/_form.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/helpers/work_tasks_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14354067">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <folding>
+            <element signature="e#26#95#0" expanded="false" />
+            <element signature="e#168#537#0" expanded="false" />
+            <element signature="e#541#985#0" expanded="false" />
+            <element signature="e#989#1185#0" expanded="false" />
+            <element signature="e#1189#1561#0" expanded="false" />
+            <element signature="e#1565#1839#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/simple_jobs/tasks_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3275862">
+          <caret line="31" column="32" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="32" />
+          <folding>
+            <element signature="e#44#410#0" expanded="false" />
+            <element signature="e#416#890#0" expanded="false" />
+            <element signature="e#896#1184#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/tasks/update.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.635514">
+          <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/tasks/create.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44859812">
+          <caret line="8" column="54" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/tasks/_tasks.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.7383177">
+          <caret line="39" column="58" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/stock_item_selectors/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1034,58 +881,308 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/works/new.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/stock_item_selectors/index.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="68" selection-start-line="0" selection-start-column="68" selection-end-line="0" selection-end-column="68" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/works/new.js.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/simple_jobs/tasks_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="79" selection-start-line="0" selection-start-column="62" selection-end-line="0" selection-end-column="79" />
+        <state vertical-scroll-proportion="0.45454547">
+          <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+          <folding>
+            <element signature="e#233#288#0" expanded="false" />
+            <element signature="e#294#346#0" expanded="false" />
+            <element signature="e#352#368#0" expanded="false" />
+            <element signature="e#374#642#0" expanded="false" />
+            <element signature="e#445#634#0" expanded="false" />
+            <element signature="e#465#624#1" expanded="false" />
+            <element signature="e#501#503#0" expanded="false" />
+            <element signature="e#648#894#0" expanded="false" />
+            <element signature="e#676#886#0" expanded="false" />
+            <element signature="e#696#876#1" expanded="false" />
+            <element signature="e#748#750#0" expanded="false" />
+            <element signature="e#900#1206#0" expanded="false" />
+            <element signature="e#929#1198#0" expanded="false" />
+            <element signature="e#949#1188#1" expanded="false" />
+            <element signature="e#1034#1036#0" expanded="false" />
+            <element signature="e#1212#1312#0" expanded="false" />
+            <element signature="e#1260#1304#0" expanded="false" />
+            <element signature="e#1292#1294#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/task_items/new.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/works/create.js.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/task_items/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="32" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/task_items/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="45" selection-start-line="0" selection-start-column="45" selection-end-line="0" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/task_items/_stock_item_selector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33971292">
+          <caret line="15" column="26" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/task_items/new.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="84" selection-start-line="0" selection-start-column="74" selection-end-line="0" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/work_tasks_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6315789">
+          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding>
+            <element signature="e#221#587#0" expanded="false" />
+            <element signature="e#591#634#0" expanded="false" />
+            <element signature="e#638#652#0" expanded="false" />
+            <element signature="e#656#1133#0" expanded="false" />
+            <element signature="e#815#1127#0" expanded="false" />
+            <element signature="e#833#1119#1" expanded="false" />
+            <element signature="e#993#995#0" expanded="false" />
+            <element signature="e#1137#1436#0" expanded="false" />
+            <element signature="e#1163#1430#0" expanded="false" />
+            <element signature="e#1181#1422#1" expanded="false" />
+            <element signature="e#1295#1297#0" expanded="false" />
+            <element signature="e#1440#1731#0" expanded="false" />
+            <element signature="e#1467#1725#0" expanded="false" />
+            <element signature="e#1485#1717#1" expanded="false" />
+            <element signature="e#1569#1571#0" expanded="false" />
+            <element signature="e#1735#1830#0" expanded="false" />
+            <element signature="e#1784#1824#0" expanded="false" />
+            <element signature="e#1814#1816#0" expanded="false" />
+            <element signature="e#1845#1912#0" expanded="false" />
+            <element signature="e#1916#1974#0" expanded="false" />
+            <element signature="e#1978#2078#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/vehicles_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.gem/ruby/2.2.0/gems/activerecord-4.2.1/lib/active_record/attribute_methods.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/task_items_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/stock_item.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5966387">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/stock_item_selectors/_stock_item_selectors.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42">
+          <caret line="14" column="53" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/tasks/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="44" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/tasks/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="76" selection-start-line="0" selection-start-column="55" selection-end-line="0" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/task_items/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36">
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/task_items/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4909091">
+          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/task_items/_stock_items_selector.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75630254">
+          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/task_items/_task_items.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6727273">
+          <caret line="60" column="6" selection-start-line="60" selection-start-column="6" selection-end-line="60" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/task_items/create.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27272728">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/task_items/create.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38181818">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/task_items/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="87" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/task_items/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="84" selection-start-line="0" selection-start-column="84" selection-end-line="0" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/task_items/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="90" selection-start-line="0" selection-start-column="57" selection-end-line="0" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/task_items/edit.js.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39">
-          <caret line="13" column="62" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
+          <caret line="13" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/work_tasks_helper.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/task_items/edit.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28708133">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.15">
+          <caret line="5" column="69" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/works/_works.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/task_items_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6666667">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        <state vertical-scroll-proportion="-0.055555556">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding>
+            <element signature="e#247#587#0" expanded="false" />
+            <element signature="e#1374#1376#0" expanded="false" />
+            <element signature="e#1516#1930#0" expanded="false" />
+            <element signature="e#1791#1793#0" expanded="false" />
+            <element signature="e#1934#2031#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/simple_jobs/task_items_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="14" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
+          <folding>
+            <element signature="e#1196#1627#0" expanded="false" />
+            <element signature="e#2075#2182#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/task_items/destroy.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06">
+          <caret line="2" column="3" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/tasks/_tasks.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/task_items/destroy.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76">
-          <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.06">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/work_tasks/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/simple_jobs/task_items/update.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.385">
-          <caret line="39" column="41" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.66">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/task_items/update.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72">
+          <caret line="24" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>

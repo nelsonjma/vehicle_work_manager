@@ -2,7 +2,7 @@ class SimpleTask < ActiveRecord::Base
 
   belongs_to :simple_work
 
-  has_many :task_items
+  has_many :simple_task_items
 
   validates_presence_of :name,        message: '( nome tem de ser preenchido )'
   validates_presence_of :description, message: '( descrição tem de ser preenchida )'
@@ -19,6 +19,11 @@ class SimpleTask < ActiveRecord::Base
     if self.finished
       self.finished_at = Time.now
     end
+  end
+
+  def finish
+    self.finished = true
+    self.save
   end
 
 end

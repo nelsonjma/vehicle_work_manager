@@ -1,0 +1,24 @@
+<% you_are_admin = just_for_admin_user %>
+
+// close create/edit modal
+$('#addEditModal').modal('hide');
+
+var row_position = $('#table_row_position').val();
+
+var selected_row = $('#simple_task_item_tbody').find('> tr:eq(' + row_position + ')');
+
+<% if you_are_admin %>
+selected_row.find('> td:eq(0)').html("<%= @stock_item.code %>");
+selected_row.find('> td:eq(1)').html("<%= @task_item.qtd %>");
+selected_row.find('> td:eq(2)').html("<%=@task_item.qtd * @stock_item.price %> €");
+selected_row.find('> td:eq(3)').html("<%= @stock_item.name %>");
+selected_row.find('> td:eq(4)').html("<%= current_user_name %>");
+selected_row.find('> td:eq(5)').html("<%= @task_item.note %>");
+<% else %>
+selected_row.find('> td:eq(0)').html("<%= @stock_item.code %>");
+selected_row.find('> td:eq(1)').html("<%= @task_item.qtd %>");
+selected_row.find('> td:eq(2)').html("<%= @stock_item.name %>");
+selected_row.find('> td:eq(3)').html("<%= current_user_name %>");
+selected_row.find('> td:eq(4)').html("<%= @task_item.note %>");
+<% end %>
+

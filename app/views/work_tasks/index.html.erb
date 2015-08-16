@@ -40,13 +40,13 @@
             <td><%= work_task.description %></td>
             <td><%= work_task.ut %></td>
 
-            <td><%= finished_cell_content(work_task.finished, work_task.finished_at, work_task.id) %></td>
+            <td><%= work_tasks_finished_cell(work_task.finished, work_task.finished_at, work_task.id) %></td>
 
-            <%= show_items_button(work_task.id, @work_id, params[:vehicle_id], work_task.finished, params[:origin]) %>
+            <%= work_tasks_items_button(work_task.id, @work_id, params[:vehicle_id], work_task.finished, params[:origin]) %>
 
-            <%= show_edit_button(is_admin, work_task.id) %>
+            <%= work_tasks_edit_button(is_admin, work_task.id) %>
 
-            <%= show_delete_button(is_admin, is_read_only?(work_task.finished), work_task.id) %>
+            <%= work_tasks_delete_button(is_admin, is_read_only?(work_task.finished), work_task.id) %>
           </tr>
       <% end %>
       </tbody>

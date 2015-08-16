@@ -7,8 +7,7 @@ var rowContent = '<tr>' +
         '<td><%= @work.created_at.strftime('%Y-%m-%d') %></td>' +
         '<td></td>' +
 
-        '<td></td>' +
-        //'<td><%= link_to 'Tarefas', work_tasks_path(params: { work_id: @work.id }), class: 'btn btn-info' %></td>' +
+        '<td><%= link_to 'Tarefas', simple_jobs_tasks_path(params: { work_id: @work.id }), class: 'btn btn-info' %></td>' +
 
         '<%= content_tag(:td, (link_to 'Editar', edit_simple_jobs_work_path(@work.id.to_s), remote: true, class: 'update_post btn btn-warning')) if you_are_admin %>' +
         '<%= content_tag(:td, (link_to 'Eliminar', simple_jobs_work_path(@work.id.to_s), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger')) if you_are_admin %>' +

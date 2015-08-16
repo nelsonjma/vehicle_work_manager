@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2035034544">
+  <component name="DataSourceManagerImpl" format="xml" hash="4151585986">
     <data-source source="LOCAL" name="Rails vehicle_work_manager: development" uuid="6b16af1c-0324-4f54-aff5-e4d958d0f144">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
       <libraries>
-        <library>
-          <url>file://$PROJECT_DIR$/../../../jdbc_drivers/sqlite-jdbc-3.8.10.1.jar</url>
-        </library>
         <library>
           <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/sqlite-jdbc-3.8.9.jar</url>
         </library>

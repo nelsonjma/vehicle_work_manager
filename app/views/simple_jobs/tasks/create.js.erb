@@ -1,0 +1,20 @@
+<% you_are_admin = just_for_admin_user %>
+
+var rowContent = '<tr>' +
+        '<td><%= @task.name  %></td>' +
+        '<td><%= @task.description %></td>' +
+
+        '<td><%= simple_task_finished_cell(@task.finished, @task.finished_at, @task.id) %></td>' +
+
+        '<td><%= simple_task_items_button(@task.simple_work_id, @task.id, @task.finished, false) %></td>' +
+
+        '<td><%= simple_task_edit_button(you_are_admin, @task.id, false) %></td>' +
+
+        '<td><%= simple_task_delete_button(you_are_admin, is_read_only?(@task.finished), @task.id, false) %></td>' +
+
+        '</tr>';
+
+insertRowAfter('simple_task_tbody', rowContent);
+
+// close create/edit modal
+$('#addEditModal').modal('hide');

@@ -3,12 +3,12 @@
 $('.finish_post').bind('ajax:success', function() {
     var selected_row = $(this).closest('tr');
 
-    selected_row.find('> td:eq(3)').html('<%= work_tasks_finished_cell(@work_task.finished, @work_task.finished_at, @work_task.id) %>');
+    selected_row.find('> td:eq(2)').html('<%= simple_task_finished_cell(@task.finished, @task.finished_at, @task.id) %>');
 
-    selected_row.find('> td:eq(6)').html('<%= work_tasks_delete_button(is_admin, is_read_only?(@work_task.finished), @work_task.id, false) %>');
+    selected_row.find('> td:eq(5)').html('<%= simple_task_delete_button(is_admin, is_read_only?(@task.finished), @task.id, false) %>');
 
 
-    var items = selected_row.find('> td:eq(4) > a');
+    var items = selected_row.find('> td:eq(3) > a');
 
     var currentUrl = $(items).attr('href');
 
