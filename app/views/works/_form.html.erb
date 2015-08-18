@@ -1,3 +1,5 @@
+<% is_GOD_user = user_has_permission([0]) %>
+
 <%= form_for(@work, remote: true, :html => { class: 'form-horizontal', role: 'form' }) do |f| %>
 
     <%= f.hidden_field :vehicle_id %>
@@ -16,13 +18,19 @@
       </div>
     </div>
 
+    <%= @work.finished %>
+
     <% unless is_new_work %>
+        <% unless @work.finished && !is_GOD_user  %>
+
         <div class="form-group">
           <%= f.label 'Obra Terminado?:', class: 'control-label col-sm-2' %>
           <div class="col-sm-2">
             <%= f.check_box :finished, class: 'form-control' %>
           </div>
         </div>
+
+        <% end %>
     <% end %>
 
     <div class="form-group">

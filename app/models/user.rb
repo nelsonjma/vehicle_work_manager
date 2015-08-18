@@ -27,7 +27,11 @@ class User < ActiveRecord::Base
   end
 
   def is_admin?
-    return true if permission == 0
-    return false
+    return (self.permission < 3 ? true : false)
   end
+
+  def has_permission?(lvl)
+    return self.permission.eql?(lvl)
+  end
+
 end

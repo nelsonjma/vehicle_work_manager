@@ -29,5 +29,13 @@ module LayoutOperations
       current_user.is_admin?
     end
 
+    def user_has_permission(lvls)
+      lvls.each { |lvl|
+        return true if current_user.has_permission?(lvl)
+      }
+
+      return false
+    end
+
   end
 end
