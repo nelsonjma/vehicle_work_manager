@@ -52,7 +52,7 @@
             <%= content_tag(:td, (link_to 'Editar', edit_work_path(work), remote: true, class: 'update_post btn btn-warning')) if you_are_admin %>
             <%= content_tag(:td, (link_to 'Eliminar', work, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger')) if you_are_admin %>
 
-            <%= content_tag(:td, (link_to 'Download', download_work_report_works_path(format: 'xlsx', params: { vehicle_id: params[:vehicle_id], work_id: work.id }), class: 'btn btn-primary')) if you_are_admin %>
+            <%= content_tag(:td, (link_to (tag(:span, class: 'glyphicon glyphicon-download', aria: { hidden: 'true' })), download_work_report_works_path(format: 'xlsx', params: { vehicle_id: params[:vehicle_id], work_id: work.id }), class: 'btn btn-primary')) if you_are_admin %>
 
           </tr>
       <% end %>

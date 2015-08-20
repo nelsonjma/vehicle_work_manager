@@ -7,35 +7,66 @@ module VehicleWorkReport
 
     marca     = vehicle.marca
     matricula = vehicle.matricula
+    corporacao = vehicle.corporacao
+
     work      = build_work(work_id)
 
     excel = Axlsx::Package.new
     excel.use_shared_strings = true
-    excel.workbook.add_worksheet(name: 'report') do |sheet|
 
-      sheet.add_row ['Marca:', marca]
-      sheet.add_row ['Matricula:', matricula]
-      sheet.add_row ['Nº Processo:', 'xxxx']
+    excel.workbook.styles do |style|
 
-      sheet.add_row ['Obra:', work[:name]]
-      sheet.add_row ['Data fim de obra:', work[:finished_at]]
+      title_style = style.add_style :b => true, :sz => 12, :alignment => { :horizontal=> :left }
+      divider_style = style.add_style :bg_color => '00'
 
-      next if work[:tasks] == nil
+      excel.workbook.add_worksheet(name: 'report') do |sheet|
 
-      work[:tasks].each do |task|
-        sheet.add_row []
-        sheet.add_row ['Tarefa:', task[:name]]
-        sheet.add_row ['Ut:', task[:ut]]
+        processo = "#{work[:created_at].to_s.slice!(0..10).gsub('-','')}#{corporacao}#{matricula}"
 
-        sheet.add_row ['', '', 'Item', 'Qt', 'CU', 'CT', 'Responsável']
+        sheet.add_row ['Marca:', marca], :style => [title_style]
+        sheet.add_row ['Matricula:', matricula], :style => [title_style]
+        sheet.add_row ['Nº Processo:', processo], :style => [title_style]
 
-        next if task[:items] == nil
+        sheet.add_row ['Obra:', work[:name]], :style => [title_style]
+        sheet.add_row ['Data fim de obra:', work[:finished_at]], :style => [title_style]
 
-        task[:items].each do |item|
-          sheet.add_row ['', '', item[:name], item[:qtd], item[:price], item[:price].to_i*item[:qtd].to_i, item[:user]]
+        ##### criação das celulas referentes às obras #####
+        next if work[:tasks] == nil
+
+        ct_total = 0
+
+        work[:tasks].each do |task|
+
+          sheet.add_row ['', '', '', '', '', '', ''], :height => 5, :style => [divider_style, divider_style, divider_style, divider_style, divider_style, divider_style, divider_style]
+
+          ##### dados da tarefa #####
+          sheet.add_row ['Tarefa:', task[:name]], :style => [title_style]
+          sheet.add_row ['Ut:', task[:ut]], :style => [title_style]
+
+          ##### criação das celulas com os items #####
+          sheet.add_row ['', '', 'Item', 'Qt', 'CU', 'CT', 'Responsável'], :style => [title_style, title_style, title_style, title_style, title_style, title_style, title_style]
+
+          next if task[:items] == nil
+
+          ct_total_tarefa = 0
+
+          task[:items].each do |item|
+
+            ct_total_tarefa += item[:price].to_i*item[:qtd].to_i
+
+            sheet.add_row ['', '', item[:name], item[:qtd], item[:price], item[:price].to_i*item[:qtd].to_i, item[:user]]
+          end
+
+          sheet.add_row ['', 'Total Tarefa:', '', '', '', ct_total_tarefa, ''], :style => [title_style, title_style, title_style, title_style, title_style, title_style, title_style]
+          ct_total += ct_total_tarefa
+          #########################################
         end
-      end
 
+        sheet.add_row ['', '', '', '', '', '', ''], :height => 5, :style => [divider_style, divider_style, divider_style, divider_style, divider_style, divider_style, divider_style]
+        sheet.add_row ['', 'Total Obra:', '', '', '', ct_total, ''], :style => [title_style, title_style, title_style, title_style, title_style, title_style, title_style]
+        #########################################
+
+      end
     end
 
     send_data excel.to_stream.read, :filename => 'relatorio_veiculo_obra.xlsx', :type => 'application/vnd.openxmlformates-officedocument.spreadsheetml.sheet'
@@ -78,6 +109,7 @@ module VehicleWorkReport
 
     return {name: work.description,
             finished_at: work.finished_at,
+            created_at: work.created_at,
             tasks: hash_work_tasks
     }
   end
