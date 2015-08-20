@@ -22,7 +22,7 @@
         <th colspan="3"></th>
         <th colspan="2" class="cell_center">data</th>
 
-        <%= tag(:th, colspan: (you_are_admin ? 3 : 1)) %>
+        <%= tag(:th, colspan: (you_are_admin ? 4 : 1)) %>
       </tr>
       <tr>
         <th>descrição</th>
@@ -32,7 +32,7 @@
         <th>criação</th>
         <th>terminação</th>
 
-        <%= tag(:th, colspan: (you_are_admin ? 3 : 1)) %>
+        <%= tag(:th, colspan: (you_are_admin ? 4 : 1)) %>
 
       </tr>
       </thead>
@@ -51,6 +51,8 @@
 
             <%= content_tag(:td, (link_to 'Editar', edit_work_path(work), remote: true, class: 'update_post btn btn-warning')) if you_are_admin %>
             <%= content_tag(:td, (link_to 'Eliminar', work, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger')) if you_are_admin %>
+
+            <%= content_tag(:td, (link_to 'Download', download_work_report_works_path(format: 'xlsx', params: { vehicle_id: params[:vehicle_id], work_id: work.id }), class: 'btn btn-primary')) if you_are_admin %>
 
           </tr>
       <% end %>

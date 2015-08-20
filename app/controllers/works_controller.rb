@@ -6,6 +6,7 @@ class WorksController < ApplicationController
   before_action :set_work, only: [:edit, :update, :destroy]
 
   include LayoutOperations::UserLayoutHelper
+  include VehicleWorkReport
 
   def index
 
@@ -17,7 +18,6 @@ class WorksController < ApplicationController
       # redirecto to tasks if just one work
       redirect_to work_tasks_url(params: { work_id: @works[0].id, vehicle_id: @vehicle.id, origin: 'from_vehicles' }) if @works.count == 1
     end
-
   end
 
   def new
@@ -59,6 +59,16 @@ class WorksController < ApplicationController
         generic_form_error_hander(format, 'Erro ao eliminar obra', ['Obra tem tarefas, não pode ser eliminada.'])
       end
     end
+  end
+
+  def download_work_report
+    vehicle_id  = params[:vehicle_id]
+    work_id     = params[:work_id]
+
+    respond_to do |format|
+      format.xlsx { build_work_report(vehicle_id, work_id) }
+    end
+
   end
 
   private

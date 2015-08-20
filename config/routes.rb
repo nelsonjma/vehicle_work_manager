@@ -10,7 +10,11 @@ Rails.application.routes.draw do
 
   resources :vehicle_types,         :only => [:index, :new, :edit, :create, :update, :destroy]
 
-  resources :works,                 :only => [:index, :new, :edit, :create, :update, :destroy]
+  resources :works,                 :only => [:index, :new, :edit, :create, :update, :destroy] do
+    collection do
+      get :download_work_report
+    end
+  end
 
   resources :tasks,                 :only => [:index, :new, :edit, :create, :update, :destroy]
 
@@ -32,11 +36,13 @@ Rails.application.routes.draw do
 
   namespace :simple_jobs do
     resources :task_items,          :only => [:index, :new, :edit, :create, :update, :destroy]
+
     resources :tasks,               :only => [:index, :new, :edit, :create, :update, :destroy] do
       member do
         get :finish
       end
     end
+
     resources :works,               :only => [:index, :new, :edit, :create, :update, :destroy]
   end
 

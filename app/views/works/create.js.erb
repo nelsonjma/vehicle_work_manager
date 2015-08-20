@@ -11,6 +11,7 @@ var rowContent = '<tr>' +
 
         '<%= content_tag(:td, (link_to 'Editar', edit_work_path(@work.id.to_s), remote: true, class: 'update_post btn btn-warning')) if you_are_admin %>' +
         '<%= content_tag(:td, (link_to 'Eliminar', work_path(@work.id.to_s), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger')) if you_are_admin %>' +
+        '<%= content_tag(:td, (link_to 'Download', download_work_report_works_path(format: 'xlsx', params: { vehicle_id: @work.vehicle_id, work_id: @work.id }), class: 'btn btn-primary')) if you_are_admin %>' +
 
         '</tr>';
 
