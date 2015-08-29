@@ -63,7 +63,7 @@ module SimpleJobs
     end
 
     def work_params
-      params.require(:simple_work).permit(:description, :notes, :finished)
+      params.require(:simple_work).permit(:description, :notes, :finished, :start_work_at)
     end
 
   end

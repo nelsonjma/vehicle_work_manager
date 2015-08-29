@@ -25,11 +25,12 @@
           <%= tag(:th, colspan: (you_are_admin ? 3 : 1)) %>
         </tr>
         <tr>
+          <th>código</th>
           <th>descrição</th>
           <th>notas</th>
           <th>terminada?</th>
 
-          <th>criação</th>
+          <th>inicio obra</th>
           <th>terminação</th>
 
           <%= tag(:th, colspan: (you_are_admin ? 3 : 1)) %>
@@ -38,11 +39,12 @@
       <tbody id="simple_work_tbody">
       <% @works.each do |work| %>
         <tr>
+          <td><%= work.id%></td>
           <td><%= work.description %></td>
           <td><%= work.notes %></td>
           <td><%= work.finished ? 'sim' : 'não' %></td>
 
-          <td><%= work.created_at.strftime('%Y-%m-%d') %></td>
+          <td><%= work.start_work_at.strftime('%Y-%m-%d') %></td>
           <td><%= work.finished ? work.finished_at.strftime('%Y-%m-%d') : '' %></td>
 
           <td><%= link_to 'Tarefas', simple_jobs_tasks_path(params: { work_id: work.id }), class: 'btn btn-info' %></td>
