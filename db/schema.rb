@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150816000059) do
+ActiveRecord::Schema.define(version: 20150829001006) do
 
   create_table "item_categories", force: :cascade do |t|
     t.string   "name"
@@ -33,19 +33,20 @@ ActiveRecord::Schema.define(version: 20150816000059) do
     t.integer  "simple_work_id"
     t.string   "name"
     t.string   "description"
-    t.boolean  "finished"
+    t.boolean  "finished",       default: false
     t.datetime "finished_at"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "simple_works", force: :cascade do |t|
     t.string   "description"
     t.string   "notes"
-    t.boolean  "finished"
+    t.boolean  "finished",      default: false
     t.datetime "finished_at"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.datetime "start_work_at"
   end
 
   create_table "stock_items", force: :cascade do |t|
@@ -105,22 +106,23 @@ ActiveRecord::Schema.define(version: 20150816000059) do
 
   create_table "work_tasks", force: :cascade do |t|
     t.integer  "ut"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "work_id"
     t.integer  "task_id"
-    t.boolean  "finished"
+    t.boolean  "finished",    default: false
     t.datetime "finished_at"
   end
 
   create_table "works", force: :cascade do |t|
     t.string   "description"
     t.text     "notes"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.boolean  "finished"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.boolean  "finished",      default: false
     t.integer  "vehicle_id"
     t.datetime "finished_at"
+    t.datetime "start_work_at"
   end
 
 end

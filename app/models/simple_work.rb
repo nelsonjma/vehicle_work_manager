@@ -16,8 +16,6 @@ class SimpleWork < ActiveRecord::Base
   def finished_at_on_save
     if self.finished
       self.finished_at = Time.now
-    elsif self.finished.eql? nil
-      self.finished = 0
     end
   end
 

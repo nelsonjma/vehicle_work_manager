@@ -1,4 +1,5 @@
 <% you_are_admin = just_for_admin_user %>
+<% is_GOD_user = user_has_permission([0]) %>
 
 rowContent = '<tr>' +
         '<td><%= link_to (image_tag @vehicle_details.image), works_path(params: { vehicle_id: @vehicle.id.to_s }) %></td>' +
@@ -11,7 +12,7 @@ rowContent = '<tr>' +
         '<td><%= @vehicle.description %></td>' +
 
         '<%= content_tag(:td, (link_to 'Editar', edit_vehicle_path(@vehicle.id.to_s), remote: true, class: 'update_post btn btn-warning')) if you_are_admin %>' +
-        '<%= content_tag(:td, (link_to 'Eliminar', vehicle_path(@vehicle.id.to_s), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger')) if you_are_admin %>' +
+        '<%= content_tag(:td, (link_to 'Eliminar', vehicle_path(@vehicle.id.to_s), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger')) if is_GOD_user %>' +
 
         '</tr>'
 

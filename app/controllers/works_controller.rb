@@ -82,7 +82,7 @@ class WorksController < ApplicationController
   end
 
   def work_params
-    params.require(:work).permit(:description, :notes, :finished, :vehicle_id)
+    params.require(:work).permit(:description, :notes, :finished, :vehicle_id, :start_work_at)
   end
 
 end
