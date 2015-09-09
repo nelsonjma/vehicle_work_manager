@@ -7,7 +7,9 @@ var rowContent = '<tr>' +
         '<td><%= @task_item.qtd  %></td>' +
         '<%= content_tag(:td, "#{@task_item.qtd * @stock_item.price} €" ) if you_are_admin %>' +
         '<td><%= @stock_item.name  %></td>' +
-        '<td><%= current_user_name  %></td>' +
+
+        '<%= content_tag(:td, current_user_name) if you_are_admin %>' +
+
         '<td><%= @task_item.note  %></td>' +
 
         '<%= content_tag(:td, (link_to 'Editar', edit_task_item_path(@task_item, params: { search: @task_item.stock_item_id }), remote: true, class: 'update_post btn btn-warning')) if you_are_admin %>' +

@@ -4,6 +4,7 @@ class WorkTask < ActiveRecord::Base
   belongs_to :work
 
   has_many :task_items
+  has_many :labor_users
 
   validates_presence_of :task_id,   message: '( selecione uma tarefa )'
   validates_presence_of :ut,        message: '( ut tem de ser preenchida )'

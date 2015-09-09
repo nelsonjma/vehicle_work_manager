@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :task_items
   has_many :simple_task_items
 
+  has_many :labor_users
 
   validates :pin, uniqueness: true
 

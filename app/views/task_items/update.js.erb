@@ -18,7 +18,6 @@ var selected_row = $('#task_item_tbody').find('> tr:eq(' + row_position + ')');
     selected_row.find('> td:eq(0)').html("<%= @stock_item.code %>");
     selected_row.find('> td:eq(1)').html("<%= @task_item.qtd %>");
     selected_row.find('> td:eq(2)').html("<%= @stock_item.name %>");
-    selected_row.find('> td:eq(3)').html("<%= current_user_name %>");
-    selected_row.find('> td:eq(4)').html("<%= @task_item.note %>");
+    selected_row.find('> td:eq(3)').html("<%= @task_item.note %>");
 <% end %>
 

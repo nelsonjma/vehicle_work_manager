@@ -12,7 +12,7 @@ class WorkTasksController < ApplicationController
                                 work_tasks.finished,
                                 work_tasks.finished_at,
                                 tasks.name,
-                                tasks.description ')
+                                work_tasks.description ')
   end
 
   def new
@@ -83,7 +83,7 @@ class WorkTasksController < ApplicationController
   end
 
   def work_task_params
-    params.require(:work_task).permit(:work_id, :task_id, :ut, :finished)
+    params.require(:work_task).permit(:work_id, :task_id, :ut, :finished, :description)
   end
 
 end
