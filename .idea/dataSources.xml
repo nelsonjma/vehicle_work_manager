@@ -8,9 +8,6 @@
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
       <libraries>
         <library>
-          <url>file://$PROJECT_DIR$/../../../jdbc_drivers/sqlite-jdbc-3.8.10.1.jar</url>
-        </library>
-        <library>
           <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/sqlite-jdbc-3.8.9.jar</url>
         </library>
         <library>
