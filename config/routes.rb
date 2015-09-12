@@ -34,6 +34,8 @@ Rails.application.routes.draw do
 
   resources :users,                 :only => [:index, :new, :edit, :create, :update, :destroy]
 
+  resources :labor_users,           :only => [:new, :create]
+
   namespace :simple_jobs do
     resources :task_items,          :only => [:index, :new, :edit, :create, :update, :destroy]
 
@@ -45,6 +47,5 @@ Rails.application.routes.draw do
 
     resources :works,               :only => [:index, :new, :edit, :create, :update, :destroy]
   end
-
 
 end

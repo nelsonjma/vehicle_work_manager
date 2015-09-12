@@ -1,0 +1,8 @@
+// close create/edit modal
+$('#addEditModal').modal('hide');
+
+var row_position = $('#table_row_position').val();
+
+var selected_row = $('#work_task_tbody').find('> tr:eq(' + row_position + ')');
+
+selected_row.find('> td:eq(2)').html("<%= get_work_task_labor(@labor_user.work_task_id) %>");

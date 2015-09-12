@@ -22,13 +22,6 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <%= f.label 'UT:', class: 'control-label col-sm-2' %>
-      <div class="col-sm-4">
-        <%= f.text_field :ut, class: 'form-control' %>
-      </div>
-    </div>
-
     <% if is_admin && !is_new_work_task && @work_task.finished %>
         <div class="form-group">
           <%= f.label 'Tarefa Terminada?:', class: 'control-label col-sm-2' %>

@@ -22,7 +22,7 @@ module WorkTasksHelper
       button = link_to 'Eliminar', work_task_path(work_task_id), method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger'
 
       return with_td ? content_tag(:td, button) : button
-    elsif read_only
+    elsif is_admin && read_only
       return with_td ? content_tag(:td, '') : ''
     else
       return ''
@@ -36,6 +36,13 @@ module WorkTasksHelper
   def work_tasks_items_button(work_task_id, work_id, vehicle_id, finished, origin, with_td = true)
     button = link_to 'Items', task_items_path(params: { work_task_id: work_task_id, work_id: work_id, vehicle_id: vehicle_id, read_only: is_read_only?(finished), origin: origin }), class: 'list_items btn btn-info'
 
+    return with_td ? content_tag(:td, button) : button
+  end
+
+  def work_tasks_labor_button(work_task_id, read_only, with_td = true)
+    return (with_td ? content_tag(:td, '') : '') if read_only
+
+    button = link_to 'Mão de Obra', new_labor_user_path(params: {work_task_id: work_task_id}), remote: true, class: 'update_post btn btn-primary'
     return with_td ? content_tag(:td, button) : button
   end
 

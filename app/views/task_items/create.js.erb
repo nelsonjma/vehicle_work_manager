@@ -1,7 +1,5 @@
 <% you_are_admin = just_for_admin_user %>
 
-<% x = content_tag(:td, "#{@task_item.qtd * @stock_item.price} €" ) if you_are_admin  %>
-
 var rowContent = '<tr>' +
         '<td><%= @stock_item.code  %></td>' +
         '<td><%= @task_item.qtd  %></td>' +

@@ -1,21 +1,22 @@
 <% is_admin     = just_for_admin_user %>
-<%= origin      = params[:origin] %>
-<%= vehicle_id  = params[:vehicle_id] %>
+<% origin      = params[:origin] %>
+<% vehicle_id  = params[:vehicle_id] %>
+<% is_read_only = is_read_only?(@work_task.finished) %> // o read_only is false because is a new item
 
 var rowContent = '<tr>' +
         '<td><%= @task_details.name %></td>' +
         '<td><%= @work_task.description %></td>' +
-        '<td><%= @work_task.ut %></td>' +
+        '<td><%= get_work_task_labor(@work_task.id) %></td>' +
 
         '<td><%= work_tasks_finished_cell(@work_task.finished, @work_task.finished_at, @work_task.id) %></td>' +
 
-        // o read_only is false because is a new item
-        '<%= work_tasks_items_button(@work_task.id, @work_task.work_id, vehicle_id, origin, false) %>' +
+        '<%= work_tasks_items_button(@work_task.id, @work_task.work_id, vehicle_id, origin, is_read_only) %>' +
 
         '<%= work_tasks_edit_button(is_admin, @work_task.id) %>' +
 
-        '<%= work_tasks_delete_button(is_admin, false, @work_task.id) %>' +
+        '<%= work_tasks_delete_button(is_admin, is_read_only, @work_task.id) %>' +
 
+        '<%= work_tasks_labor_button(@work_task.id, is_read_only) %>' +
         '</tr>';
 
 insertRowAfter('work_task_tbody', rowContent);

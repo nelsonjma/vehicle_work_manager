@@ -37,5 +37,13 @@ module LayoutOperations
       return false
     end
 
+    def current_user_id
+      current_user.id
+    end
+
+    def current_user_name
+      current_user.name
+    end
+
   end
 end

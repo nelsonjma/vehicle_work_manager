@@ -77,41 +77,41 @@ module VehicleWorkReport
   def build_work(id)
 
     work = Work.find(id)
-    work_tasks = Work.current_work_tasks(id)
-                     .select('work_tasks.ut, work_tasks.finished, work_tasks.finished_at,
-                              tasks.id, tasks.name')
+
+    work_tasks = Work.current_work_tasks(id).select('work_tasks.ut, work_tasks.finished, work_tasks.finished_at, tasks.id, tasks.name')
 
     hash_work_tasks = Array.new
 
     work_tasks.each do |work_task|
 
-      task_items = TaskItem.current_work_task_items(work_task.id)
-                       .select('users.name as user_name, stock_items.name as item_name,
-                                stock_items.price, task_items.qtd')
+      task_items = TaskItem.current_work_task_items(work_task.id).select('users.name as user_name, stock_items.name as item_name,stock_items.price, task_items.qtd')
 
       hash_task_items = Array.new
 
-      task_items.each do |task_item|
+      task_items.each { |task_item|
         hash_task_items.push({user: task_item.user_name,
                               name: task_item.item_name,
                               price: task_item.price,
-                              qtd: task_item.qtd
-                             })
-      end
+                              qtd: task_item.qtd})
+      }
 
-      hash_work_tasks.push({ut: work_task.ut,
+      hash_work_tasks.push({ut: get_work_task_labor(work_task.id),
                             finished: work_task.finished,
                             finished_at: work_task.finished_at,
                             name: work_task.name,
-                            items: hash_task_items
-                           })
+                            items: hash_task_items})
     end
 
     return {name: work.description,
             finished_at: work.finished_at,
             created_at: work.created_at,
-            tasks: hash_work_tasks
-    }
+            tasks: hash_work_tasks}
+  end
+
+  def get_work_task_labor(work_task_id)
+    uts = 0
+    LaborUser.current_task_labor(work_task_id).each { |labor| uts += labor.ut }
+    return uts
   end
 
 end
