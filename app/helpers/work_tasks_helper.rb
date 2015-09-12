@@ -39,10 +39,10 @@ module WorkTasksHelper
     return with_td ? content_tag(:td, button) : button
   end
 
-  def work_tasks_labor_button(work_task_id, read_only, with_td = true)
+  def work_tasks_labor_button(work_task_id, read_only, work_id, vehicle_id, origin, with_td = true)
     return (with_td ? content_tag(:td, '') : '') if read_only
 
-    button = link_to 'Mão de Obra', new_labor_user_path(params: {work_task_id: work_task_id}), remote: true, class: 'update_post btn btn-primary'
+    button = link_to 'Mão de Obra', new_labor_user_path(params: {work_task_id: work_task_id, work_id: work_id, vehicle_id: vehicle_id, origin: origin}), remote: true, class: 'update_post btn btn-primary'
     return with_td ? content_tag(:td, button) : button
   end
 

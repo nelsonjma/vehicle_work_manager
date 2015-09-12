@@ -6,6 +6,7 @@ class LaborUser < ActiveRecord::Base
   validates_presence_of :user_id,   message: '( selecione um utilizador )'
 
   scope :current_task_labor, -> (work_task_id) { where('work_task_id = ?', work_task_id) }
+  scope :current_task_user_labor, -> (work_task_id) { joins(:user).where('work_task_id = ?', work_task_id) }
 
   before_save :last_update
 

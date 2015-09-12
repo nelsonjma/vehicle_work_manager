@@ -3,9 +3,10 @@ class LaborUsersController < ApplicationController
   before_action :authenticated
 
   before_action :set_labor_user, only: [:destroy]
-  before_action :set_work_task_id, only: [:new]
+  before_action :set_work_task_id, only: [:index, :new]
 
   def index
+    @labor_users = LaborUser.current_task_user_labor(@work_task_id).select('labor_users.id, users.name, labor_users.ut')
   end
 
   def new
@@ -25,6 +26,10 @@ class LaborUsersController < ApplicationController
   end
 
   def destroy
+    respond_to do |format|
+      @labor_user.destroy
+        format.js   {}
+    end
   end
 
   private

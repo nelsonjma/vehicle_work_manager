@@ -8,7 +8,6 @@ class WorkTasksController < ApplicationController
   def index
     @work_tasks = Work.current_work_tasks(@work_id)
                       .select('work_tasks.id,
-                                work_tasks.ut,
                                 work_tasks.finished,
                                 work_tasks.finished_at,
                                 tasks.name,

@@ -51,7 +51,7 @@
 
             <%= work_tasks_delete_button(is_admin, is_read_only, work_task.id) %>
 
-            <%= work_tasks_labor_button(work_task.id, is_read_only) %>
+            <%= work_tasks_labor_button(work_task.id, is_read_only, @work_id, params[:vehicle_id], params[:origin]) %>
           </tr>
       <% end %>
       </tbody>

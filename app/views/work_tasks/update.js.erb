@@ -21,4 +21,4 @@ selected_row.find('> td:eq(4)').html('<%= work_tasks_items_button(@work_task.id,
 
 selected_row.find('> td:eq(6)').html('<%= work_tasks_delete_button(is_admin, is_read_only, @work_task.id, false) %>');
 
-selected_row.find('> td:eq(7)').html('<%= work_tasks_labor_button(@work_task.id, is_read_only, false) %>');
+selected_row.find('> td:eq(7)').html('<%= work_tasks_labor_button(@work_task.id, is_read_only, @work_task.work_id, vehicle_id, origin, false) %>');

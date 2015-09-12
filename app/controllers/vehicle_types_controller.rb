@@ -47,7 +47,6 @@ class VehicleTypesController < ApplicationController
         generic_form_error_hander(format, 'Erro ao eliminar tipo de veiculo', ['O tipo de veiculo tem veiculos, não pode ser eliminado.'])
       end
     end
-
   end
 
   private

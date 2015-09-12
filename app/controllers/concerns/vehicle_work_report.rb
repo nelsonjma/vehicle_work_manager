@@ -18,6 +18,7 @@ module VehicleWorkReport
 
       title_style = style.add_style :b => true, :sz => 12, :alignment => { :horizontal=> :left }
       divider_style = style.add_style :bg_color => '00'
+      transparent_divider_style = style.add_style :bg_color => 'ff'
 
       excel.workbook.add_worksheet(name: 'report') do |sheet|
 
@@ -41,10 +42,22 @@ module VehicleWorkReport
 
           ##### dados da tarefa #####
           sheet.add_row ['Tarefa:', task[:name]], :style => [title_style]
-          sheet.add_row ['Ut:', task[:ut]], :style => [title_style]
+          sheet.add_row ['Ut Total:', task[:ut]], :style => [title_style]
+
+          ##### dados da mão de obra #####
+          if task[:items] != nil
+            sheet.add_row ['', '', '', '', '', '', ''], :height => 3, :style => [transparent_divider_style, transparent_divider_style, divider_style, divider_style, divider_style, divider_style, divider_style]
+            sheet.add_row ['', '', 'Trabalhador', 'UT', '', '', ''], :style => [title_style, title_style, title_style, title_style, title_style, title_style, title_style]
+
+            task[:labor_users].each do |labor_user|
+              sheet.add_row ['', '', labor_user[:name], labor_user[:ut], '', '', '']
+            end
+
+            sheet.add_row ['', '', '', '', '', '', ''], :height => 3, :style => [transparent_divider_style, transparent_divider_style, divider_style, divider_style, divider_style, divider_style, divider_style]
+          end
 
           ##### criação das celulas com os items #####
-          sheet.add_row ['', '', 'Item', 'Qt', 'CU', 'CT', 'Responsável'], :style => [title_style, title_style, title_style, title_style, title_style, title_style, title_style]
+          sheet.add_row ['', '', 'Item', 'Qt', 'CU', 'CT', 'Trabalhador'], :style => [title_style, title_style, title_style, title_style, title_style, title_style, title_style]
 
           next if task[:items] == nil
 
@@ -78,14 +91,12 @@ module VehicleWorkReport
 
     work = Work.find(id)
 
-    work_tasks = Work.current_work_tasks(id).select('work_tasks.ut, work_tasks.finished, work_tasks.finished_at, tasks.id, tasks.name')
-
+    work_tasks = Work.current_work_tasks(id).select('work_tasks.finished, work_tasks.finished_at, tasks.id, tasks.name, work_tasks.id as work_task_id')
     hash_work_tasks = Array.new
 
     work_tasks.each do |work_task|
 
-      task_items = TaskItem.current_work_task_items(work_task.id).select('users.name as user_name, stock_items.name as item_name,stock_items.price, task_items.qtd')
-
+      task_items = TaskItem.current_work_task_items(work_task.work_task_id).select('users.name as user_name, stock_items.name as item_name,stock_items.price, task_items.qtd')
       hash_task_items = Array.new
 
       task_items.each { |task_item|
@@ -95,11 +106,20 @@ module VehicleWorkReport
                               qtd: task_item.qtd})
       }
 
-      hash_work_tasks.push({ut: get_work_task_labor(work_task.id),
+      labor_users = LaborUser.current_task_user_labor(work_task.work_task_id).select('users.name, labor_users.ut')
+      hash_labor_users = Array.new
+
+      labor_users.each do |labor_user|
+        hash_labor_users.push({name: labor_user.name, ut: labor_user.ut})
+      end
+
+
+      hash_work_tasks.push({ut: get_work_task_labor(work_task.work_task_id),
                             finished: work_task.finished,
                             finished_at: work_task.finished_at,
                             name: work_task.name,
-                            items: hash_task_items})
+                            items: hash_task_items,
+                            labor_users: hash_labor_users})
     end
 
     return {name: work.description,
