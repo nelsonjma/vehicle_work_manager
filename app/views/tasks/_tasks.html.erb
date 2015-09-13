@@ -1,0 +1,29 @@
+<% you_are_admin = just_for_admin_user %>
+
+<%= hidden_field_tag :table_row_position %>
+
+<table class="table table-condensed">
+  <thead>
+  <tr>
+    <th>nome</th>
+    <th>descrição</th>
+
+    <%= tag(:th, colspan: (you_are_admin ? 2 : 1)) %>
+
+  </tr>
+  </thead>
+
+  <tbody id="tasks_tbody">
+  <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.name %></td>
+        <td><%= task.description %></td>
+
+        <td><%= link_to 'Editar', edit_task_path(task), remote: true, class: 'update_post btn btn-warning' %></td>
+
+        <%= content_tag(:td, (link_to 'Eliminar', task, method: :delete, data: { confirm: 'Tem a certeza?' }, remote: true, class: 'delete_post btn btn-danger')) if you_are_admin %>
+
+      </tr>
+  <% end %>
+  </tbody>
+</table>

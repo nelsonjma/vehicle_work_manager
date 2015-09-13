@@ -8,6 +8,7 @@ class WorkTasksController < ApplicationController
   def index
     @work_tasks = Work.current_work_tasks(@work_id)
                       .select('work_tasks.id,
+                                work_tasks.task_id,
                                 work_tasks.finished,
                                 work_tasks.finished_at,
                                 tasks.name,
@@ -15,10 +16,15 @@ class WorkTasksController < ApplicationController
   end
 
   def new
+    @tasks = Task.search(params[:search])
+
     @work_task = WorkTask.new
   end
 
   def edit
+    @tasks = Task.where('id = ?', (params[:search]))
+
+    @tasks_name  = @tasks.first.name
   end
 
   def create
@@ -30,7 +36,7 @@ class WorkTasksController < ApplicationController
     respond_to do |format|
       if @work_task.save
         @task_details = Task.find(@work_task.task_id)
-        #@vehicle_id   = Work.find(@work_task.work_id).vehicle_id
+        @vehicle_id   = Work.find(@work_task.work_id).vehicle_id
 
         format.js   {}
       else
@@ -43,6 +49,7 @@ class WorkTasksController < ApplicationController
     respond_to do |format|
       if @work_task.update(work_task_params)
         @task_details = Task.find(@work_task.task_id)
+        @vehicle_id   = Work.find(@work_task.work_id).vehicle_id
 
         format.js   {}
       else
@@ -82,7 +89,7 @@ class WorkTasksController < ApplicationController
   end
 
   def work_task_params
-    params.require(:work_task).permit(:work_id, :task_id, :ut, :finished, :description)
+    params.require(:work_task).permit(:work_id, :task_id, :finished, :description)
   end
 
 end

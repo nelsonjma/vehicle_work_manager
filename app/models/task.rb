@@ -11,5 +11,12 @@ class Task < ActiveRecord::Base
     self.updated_at = Time.now
   end
 
+  def self.search(search)
+    if search && search.to_s.length > 0
+      where('tasks.name LIKE ? OR tasks.description like ?', "%#{search}%", "%#{search}%")
+    else
+      where('1=1')
+    end
+  end
 
 end

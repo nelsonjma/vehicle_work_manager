@@ -18,7 +18,11 @@ Rails.application.routes.draw do
 
   resources :tasks,                 :only => [:index, :new, :edit, :create, :update, :destroy]
 
+  resources :task_selectors,        :only => [:index]
+
   resources :stock_items,           :only => [:index, :new, :edit, :create, :update, :destroy]
+
+  resources :stock_item_selectors,  :only => [:index]
 
   resources :work_tasks,            :only => [:index, :new, :edit, :create, :update, :destroy] do
     member do
@@ -27,8 +31,6 @@ Rails.application.routes.draw do
   end
 
   resources :task_items,            :only => [:index, :new, :edit, :create, :update, :destroy]
-
-  resources :stock_item_selectors,  :only => [:index]
 
   resources :item_categories,       :only => [:index, :new, :edit, :create, :update, :destroy]
 

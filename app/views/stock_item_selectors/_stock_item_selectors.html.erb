@@ -12,7 +12,7 @@
   <tbody id="stock_item_selectors_tbody">
   <% @stock_items.each do |stock_item| %>
       <tr>
-        <td><button class="stock_item_selector_button" id="<%= stock_item.id %>">Selecionar</button></td>
+        <td><button class="stock_item_selector_button btn btn-default" id="<%= stock_item.id %>">Selecionar</button></td>
         <td><%= stock_item.code %></td>
         <td><%= stock_item.name %></td>
         <td><%= stock_item.qtd %></td>

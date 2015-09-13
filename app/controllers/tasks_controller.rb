@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:edit, :update, :destroy]
 
   def index
-    @tasks = Task.all
+    @tasks = Task.search(params[:search])
   end
 
   def new

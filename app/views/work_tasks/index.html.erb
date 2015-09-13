@@ -15,7 +15,7 @@
 
   <div class="row">
     <%= go_back_link(params[:origin]) %>
-    <%= link_to 'Adicionar Tarefa', new_work_task_path(params: { work_id: @work_id }), remote: true, class: 'btn btn-primary' %>
+    <%= link_to 'Adicionar Tarefa', new_work_task_path(params: { work_id: @work_id, origin: params[:origin] }), remote: true, class: 'btn btn-primary' %>
   </div>
 
   <div class="row">
@@ -47,7 +47,7 @@
 
             <%= work_tasks_items_button(work_task.id, @work_id, params[:vehicle_id], work_task.finished, params[:origin]) %>
 
-            <%= work_tasks_edit_button(is_admin, work_task.id) %>
+            <%= work_tasks_edit_button(is_admin, work_task.id, work_task.task_id, params[:origin]) %>
 
             <%= work_tasks_delete_button(is_admin, is_read_only, work_task.id) %>
 

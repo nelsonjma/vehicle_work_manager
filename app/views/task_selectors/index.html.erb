@@ -1,0 +1,27 @@
+<%= form_tag tasks_path, :method => 'get', :id => 'task_selectors_search' do %>
+
+    <div class="input-group col-sm-4">
+      <%= text_field_tag :search, params[:search], class: 'form-control' %>
+      <span class="input-group-btn">
+            <%= submit_tag 'Search', :name => nil, class: 'btn btn-default' %>
+        </span>
+    </div>
+
+    <div class="row" id="task_selectors"><%= render 'task_selectors' %></div>
+
+<% end %>
+
+<% content_for :head do %>
+    <script type="text/javascript">
+        var ready = function() {
+            $("#task_selectors_search").find("input").keyup(function() {
+                var task_selectors_search = $("#task_selectors_search");
+                $.get(task_selectors_search.attr("action"), task_selectors_search.serialize(), null, "script");
+                return false;
+            });
+        };
+
+        $(document).ready(ready);
+        $(document).on('page:load', ready);
+    </script>
+<% end %>

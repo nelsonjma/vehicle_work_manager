@@ -29,8 +29,9 @@ module WorkTasksHelper
     end
   end
 
-  def work_tasks_edit_button(is_admin, work_task_id)
-    content_tag(:td, (link_to 'Editar', edit_work_task_path(work_task_id), remote: true, class: 'update_post btn btn-warning')) if is_admin
+  def work_tasks_edit_button(is_admin, work_task_id, task_id, origin, with_td = true)
+    button = is_admin ? (link_to 'Editar', edit_work_task_path(work_task_id, params: { search: task_id, origin: origin }), remote: true, class: 'update_post btn btn-warning') : ''
+    return with_td ? content_tag(:td, button) : button
   end
 
   def work_tasks_items_button(work_task_id, work_id, vehicle_id, finished, origin, with_td = true)
@@ -51,6 +52,14 @@ module WorkTasksHelper
       link_to 'Back', works_path(params: { vehicle_id: params[:vehicle_id] }), class: 'btn btn-primary'
     elsif origin.eql? 'from_vehicles'
       link_to 'Back', vehicles_path, class: 'btn btn-primary'
+    end
+  end
+
+  def build_task_name(name)
+    if name
+      return capture { concat text_field_tag :task_name, name, class: 'form-control' }
+    else
+      return capture { concat text_field_tag :task_name, nil, class: 'form-control' }
     end
   end
 
