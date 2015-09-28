@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   resources :tasks,                 :only => [:index, :new, :edit, :create, :update, :destroy]
 
-  resources :task_selectors,        :only => [:index]
+  resources :task_selectors,        :only => [:index, :new, :create]
 
   resources :stock_items,           :only => [:index, :new, :edit, :create, :update, :destroy]
 

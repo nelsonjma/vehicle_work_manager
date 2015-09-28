@@ -2,11 +2,17 @@
 
 <%= form_tag( task_selectors_path , {:method => 'get', :id => 'task_selectors_search', class: 'form-horizontal', role: 'form' }) do %>
 
-    <div class="input-group col-sm-4">
+    <div class="input-group col-sm-6">
+      <%= link_to 'Criar Nova Tarefa', new_task_selector_path, data: { confirm: 'Tem a certeza que deseja criar uma nova tarefa?' }, remote: true, class: 'btn btn-primary' %>
+    </div>
+
+    <br/>
+
+    <div class="input-group col-sm-6">
       <%= text_field_tag :search, params[:search], class: 'form-control' %>
       <span class="input-group-btn">
           <%= submit_tag 'Search', :name => nil, :id => 'search_submit_tag', class: 'btn btn-default' %>
-        </span>
+      </span>
     </div>
 
     <div class="table-responsive" id="task_selectors"><%= render partial: 'task_selectors/task_selectors' %></div>

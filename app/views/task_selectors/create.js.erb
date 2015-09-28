@@ -1,0 +1,15 @@
+// close create/edit modal
+$('#addEditModal').modal('hide');
+
+// opens new task again
+function showNewTaskLinkAgain() {
+    var invisibleWall = document.getElementsByClassName('modal-backdrop fade');
+
+    if (invisibleWall.length == 0 ) {
+        document.getElementById('new_task_link').click(); // javascript standard
+    } else {
+        setTimeout(showNewTaskLinkAgain, 100);
+    }
+}
+
+setTimeout(showNewTaskLinkAgain, 100);
