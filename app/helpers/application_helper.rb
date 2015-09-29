@@ -8,7 +8,7 @@ module ApplicationHelper
   # if session is alive less then 1 hours
   def session_in_time?
     return false unless session[:user_session_time]
-    return false if (Time.now-Time.parse(session[:user_session_time].to_s)).to_i > 3600 # 1 hour
+    return false if (Time.now-Time.parse(session[:user_session_time].to_s)).to_i > 1800 # 30 minutos
 
     true
   end

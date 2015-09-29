@@ -13,6 +13,8 @@ class WorkTasksController < ApplicationController
                                 work_tasks.finished_at,
                                 tasks.name,
                                 work_tasks.description ')
+
+    @work_finished = Work.find(@work_id).finished?
   end
 
   def new

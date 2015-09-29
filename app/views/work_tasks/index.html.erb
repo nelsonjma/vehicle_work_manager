@@ -15,7 +15,7 @@
 
   <div class="row">
     <%= go_back_link(params[:origin]) %>
-    <%= link_to 'Adicionar Tarefa', new_work_task_path(params: { work_id: @work_id, origin: params[:origin] }), remote: true, class: 'btn btn-primary', id: 'new_task_link' %>
+    <%= (link_to 'Adicionar Tarefa', new_work_task_path(params: { work_id: @work_id, origin: params[:origin] }), remote: true, class: 'btn btn-primary', id: 'new_task_link') unless @work_finished %>
   </div>
 
   <div class="row">

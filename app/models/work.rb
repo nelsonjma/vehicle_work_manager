@@ -23,4 +23,8 @@ class Work < ActiveRecord::Base
     end
   end
 
+  def finished?
+    return self.finished
+  end
+
 end
