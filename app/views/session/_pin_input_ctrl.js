@@ -39,5 +39,8 @@ function clear_display() {
 }
 
 $(document).on("ready page:load", ready);
+//$(document).ready(ready);
+//$(document).on('page:load', ready);
+
 
 

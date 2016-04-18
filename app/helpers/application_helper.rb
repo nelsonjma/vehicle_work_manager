@@ -9,8 +9,11 @@ module ApplicationHelper
   def session_in_time?
     return false unless session[:user_session_time]
     return false if (Time.now-Time.parse(session[:user_session_time].to_s)).to_i > 1800 # 30 minutos
-
     true
+  end
+
+  def refresh_session_time
+    session[:user_session_time] = Time.now
   end
 
   def logged_in?

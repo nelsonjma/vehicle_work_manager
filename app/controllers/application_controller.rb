@@ -11,7 +11,12 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def current_user
-    session[:user_id] && session_in_time? ? User.find_by_id(session[:user_id]) : nil
+    #(session[:user_id] && session_in_time?) ? User.find_by_id(session[:user_id]) : nil
+
+    return nil unless session[:user_id] && session_in_time?
+
+    refresh_session_time
+    return User.find_by_id(session[:user_id])
   end
 
   ###############################################################

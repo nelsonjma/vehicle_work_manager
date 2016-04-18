@@ -11,14 +11,28 @@ class VehiclesController < ApplicationController
     if just_for_admin_user
       @vehicles = Vehicle
                       .joins(:vehicle_type)
-                      .select('vehicles.id, vehicles.description, vehicle_types.name, vehicle_types.image,
-                        vehicles.marca, vehicles.matricula, vehicles.corporacao')
+                      .select(' vehicles.id,
+                                vehicles.description,
+                                vehicle_types.name,
+                                vehicle_types.image,
+                                vehicles.marca,
+                                vehicles.matricula,
+                                vehicles.corporacao'
+                      ).distinct
+                      .order('vehicles.marca')
     else
       @vehicles       = Vehicle
                             .with_work_not_finished
                             .joins(:vehicle_type)
-                            .select('vehicles.id, vehicles.description, vehicle_types.name, vehicle_types.image,
-                              vehicles.marca, vehicles.matricula, vehicles.corporacao')
+                            .select(' vehicles.id,
+                                      vehicles.description,
+                                      vehicle_types.name,
+                                      vehicle_types.image,
+                                      vehicles.marca,
+                                      vehicles.matricula,
+                                      vehicles.corporacao'
+                            ).distinct
+                            .order('vehicles.marca')
     end
 
   end
